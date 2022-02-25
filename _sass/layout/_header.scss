@@ -40,6 +40,7 @@
         height: inherit;
         line-height: inherit;
         padding: 0 1.5em;
+        color: _palette(fg-light);
         strong {
             @include vendor('transition', ( 'background-color #{_duration(transition)} ease-in-out', 'color #{_duration(transition)} ease-in-out'));
             // background-color: _palette(fg-bold);
@@ -60,7 +61,7 @@
             }
         }
         img {
-            height: 80%;
+            height: 50%;
             margin-right: 1em;
             vertical-align: middle;
         }

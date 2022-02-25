@@ -1,9 +1,9 @@
 # site settings
-title: FJAN IT
-subtitle: Uw maatwerk software
-email: info@fjan.nl
-description: FJAN IT is uw partner voor bedrijfssoftware, websites, mobiele apps en nog veel meer.
-baseurl: "/" # the subpath of your site, e.g. /blog
+title: FJAN
+subtitle: Consultant in IT
+email: funs@fjan.nl
+description: FJAN IT is uw partner voor (MKB) bedrijfssoftware, websites, mobiele apps en meer.
+baseurl: "" # the subpath of your site, e.g. /blog
 url: http://localhost # the base hostname & protocol for your site
 author:
 street_address: Loolaan 246

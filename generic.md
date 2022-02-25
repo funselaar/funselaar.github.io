@@ -2,7 +2,7 @@
 layout: post
 title: Over mij
 description: 
-image: assets/images/pic11.jpg
+image: assets/images/profile.jpg
 nav-menu: true
 ---
 
