@@ -1,7 +1,7 @@
 ---
 layout: home
 title: Home
-landing-title: 'Hi, mijn naam is Funs Janssen'
+landing-title: 'Welkom bij FJAN IT'
 description: null
 image: null
 author: null
