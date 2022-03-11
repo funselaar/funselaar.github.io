@@ -3,6 +3,10 @@
     src: url(../../assets/fonts/FuturaPTMedium.otf) format('opentype');
 }
 
+$shade1: #101A3B;
+$shade2: #0066FF;
+$shade3: rgb(0, 179, 255);
+$shade4: #8DEAFF;
 // Misc.
 $misc: ( z-index-base: 10000);
 // Duration.
@@ -12,4 +16,4 @@ $size: ( border-radius: 4px, element-height: 2.75em, element-margin: 2em, inner:
 // Font.
 $font: ( family: ('Futura PT', Helvetica, sans-serif), family-fixed: ('Courier New', monospace), weight: 300, weight-bold: 600, letter-spacing: 0.025em, letter-spacing-alt: 0.25em);
 // Palette.
-$palette: ( bg-alt: #101A3B, bg: #101A3B, fg: #0066FF, fg-bold: #0066FF, fg-light: #8DEAFF, border: rgba(212, 212, 255, 0.2), border-bg: #8deaff33, highlight: #0066FF, accent1: #6fc3df, accent2: #8d82c4, accent3: #ec8d81, accent4: #e7b788, accent5: #8ea9e8, accent6: #87c5a4);
+$palette: ( fg: $shade4, bg: $shade1, bg-alt: $shade3, fg-bold: $shade2, fg-light: $shade4, border: rgba(212, 212, 255, 0.2), border-bg: #8deaff33, highlight: $shade2, accent1: $shade4, accent2: $shade3, accent3: $shade1, accent4: $shade3, accent5: $shade1, accent6: $shade3);
