@@ -4,6 +4,8 @@ A Jekyll version of the "Forty" theme by [HTML5 UP](https://html5up.net/).
 
 ![Forty Theme](assets/images/forty.jpg "Forty Theme")
 
+# FJAN IT Website
+
 [![Deploy to GitHub Pages](https://github.com/funselaar/funselaar.github.io/actions/workflows/github-pages.yml/badge.svg?branch=develop)](https://github.com/funselaar/funselaar.github.io/actions/workflows/github-pages.yml)
 
 # How to Use
