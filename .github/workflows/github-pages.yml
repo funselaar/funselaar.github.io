@@ -13,12 +13,12 @@ jobs:
 
       # Use GitHub Actions' cache to shorten build times and decrease load on servers
       - name: Restore Previous Gemfiles
-           uses: actions/cache@v2
-           with:
-             path: ${{ github.workspace }}/vendor
-             key: ${{ runner.os }}-vendor-00-${{ hashFiles('**/Gemfile.lock') }}
-             restore-keys: |
-                ${{ runner.os }}-vendor-00-
+        uses: actions/cache@v2
+        with:
+          path: ${{ github.workspace }}/vendor
+          key: ${{ runner.os }}-vendor-00-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-vendor-00-
 
       - uses: helaili/jekyll-action@v2
         with:
