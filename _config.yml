@@ -4,7 +4,8 @@ subtitle:
 email: funs@fjan.nl
 description: FJAN IT is uw partner voor (MKB) bedrijfssoftware, websites, mobiele apps en meer.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: http://localhost # the base hostname & protocol for your site
+url: https://fjan.nl # the base hostname & protocol for your site
+domain: fjan.nl
 author:
 street_address: Loolaan 246
 city: Apeldoorn
