@@ -3,8 +3,7 @@ title: FJAN IT
 subtitle: 
 email: funs@fjan.nl
 description: FJAN IT is uw partner voor (MKB) bedrijfssoftware, websites, mobiele apps en meer.
-baseurl:
-url: https://funselaar.github.io # the base hostname & protocol for your site
+url: https://funselaar.github.io
 domain: funselaar.github.io
 author:
 street_address: Loolaan 246
