@@ -1,7 +1,7 @@
 ---
-layout: landing
+layout: landing_no_banner
 title: Over
-image: assets/images/pic06.jpg
+image: assets/images/profile.jpeg
 nav-menu: true
 ---
 
@@ -14,8 +14,12 @@ nav-menu: true
 		<header class="major">
 			<h2>Software ontwikkeling als passie</h2>
 		</header>
-		<p>Als software engineer heb ik een passie ontwikkeld voor het maken van mobiele apps en web apps. Jong begon ik met ontwikkelen waardoor ik veel ervaring op kon doen. Altijd nieuwsgierig naar de nieuwste technieken en methoden. Inmiddels kan ik een behoorlijk lijstje afvinken, toch vond ik het belangrijk me te specialiseren. </p>
-
+		<p>
+        <span class="image right"><img src="/assets/images/profile.jpeg" class="avatar" alt="Funs Janssen"></span> Wij van FJAN IT hebben een passie voor het maken van mobiele apps en web apps.
+        Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed at imperdiet ligula. Nunc sit amet vehicula ipsum, non iaculis magna. Suspendisse accumsan sit amet elit rhoncus imperdiet. Aenean consectetur tincidunt volutpat. Aenean ultrices vehicula ultricies. Cras convallis consequat ligula quis varius. In non molestie massa, tincidunt porta ipsum. Proin condimentum imperdiet pharetra. Ut quis faucibus nunc. Nam vulputate, odio vel aliquam molestie, libero mi blandit urna, vitae tincidunt tellus orci scelerisque lectus. Nullam sed maximus leo. Morbi in accumsan ante. Maecenas gravida lorem eu aliquet rhoncus.</p>
+<p>
+        Duis in cursus sapien, eu rhoncus magna. Phasellus tempor lorem quis erat facilisis, at vehicula mauris aliquet. Duis molestie, leo eu lacinia posuere, sem est sodales urna, quis porttitor velit risus in erat. Maecenas massa velit, congue a semper ac, tristique ut ligula. Pellentesque lacinia odio vitae sodales euismod. Maecenas placerat elementum ullamcorper. Pellentesque accumsan lobortis leo, et facilisis metus imperdiet non. Mauris ex purus, bibendum non faucibus vitae, vestibulum eget sapien. Praesent molestie enim eget placerat accumsan. Donec malesuada metus eu nulla vulputate tempus. Sed eget lectus at justo consequat luctus.
+        </p>
 		<!-- <ul>
 			<li>Dolor etiam magna etiam.</li>
 			<li>Sagittis lorem eleifend.</li>
@@ -24,12 +28,5 @@ nav-menu: true
 	</div>
 </section>
 
-<!-- <section id="two" class="spotlights">
-<section>
-		<a href="generic.html" class="image">
-			<img src="{% link assets/images/pic08.jpg %}" alt="" data-position="center center" />
-		</a>
-		
-        </section>
-</section> -->
+
 </div>

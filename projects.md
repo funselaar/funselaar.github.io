@@ -1,5 +1,5 @@
 ---
-title: Projecten
+title: Alle projecten
 layout: landing
 image: assets/images/pic07.jpg
 nav-menu: true
@@ -36,6 +36,10 @@ nav-menu: true
 			</div>
 		</div>
 	</section>
+</section>
+
+<section id="three" class="spotlights">
+	{% include kenteken_spotter.html %}
 </section>
 
 <!-- Three -->
