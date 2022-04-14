@@ -12,14 +12,14 @@ nav-menu: true
 <section id="one">
 	<div class="inner">
 		<header class="major">
-			<h2>Software ontwikkeling als passie</h2>
+			<h2>Welkom op mijn website!</h2>
 		</header>
+        <span class="image right"><img src="/assets/images/profile.jpeg" class="avatar" alt="Funs Janssen"></span>
 		<p>
-        <span class="image right"><img src="/assets/images/profile.jpeg" class="avatar" alt="Funs Janssen"></span> Wij van FJAN IT hebben een passie voor het maken van mobiele apps en web apps.
-        Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed at imperdiet ligula. Nunc sit amet vehicula ipsum, non iaculis magna. Suspendisse accumsan sit amet elit rhoncus imperdiet. Aenean consectetur tincidunt volutpat. Aenean ultrices vehicula ultricies. Cras convallis consequat ligula quis varius. In non molestie massa, tincidunt porta ipsum. Proin condimentum imperdiet pharetra. Ut quis faucibus nunc. Nam vulputate, odio vel aliquam molestie, libero mi blandit urna, vitae tincidunt tellus orci scelerisque lectus. Nullam sed maximus leo. Morbi in accumsan ante. Maecenas gravida lorem eu aliquet rhoncus.</p>
+         Mijn naam is Funs Janssen en ik heb ruim 6 jaar ervaring met maatwerk softwareontwikkeling. Het maken van gave producten is een van mijn grootste passies. Naast mijn werk voor de Belastingdienst, werk ik graag aan projecten namens FJAN IT.
+</p>
 <p>
-        Duis in cursus sapien, eu rhoncus magna. Phasellus tempor lorem quis erat facilisis, at vehicula mauris aliquet. Duis molestie, leo eu lacinia posuere, sem est sodales urna, quis porttitor velit risus in erat. Maecenas massa velit, congue a semper ac, tristique ut ligula. Pellentesque lacinia odio vitae sodales euismod. Maecenas placerat elementum ullamcorper. Pellentesque accumsan lobortis leo, et facilisis metus imperdiet non. Mauris ex purus, bibendum non faucibus vitae, vestibulum eget sapien. Praesent molestie enim eget placerat accumsan. Donec malesuada metus eu nulla vulputate tempus. Sed eget lectus at justo consequat luctus.
-        </p>
+Mijn expertise ligt vooral op ontwikkeling voor web en apps. Specifiek in frameworks als ASP.NET, Angular of Xamarin. Ik zie mezelf als een full-stack ontwikkelaar. Mocht je op zoek zijn naar iets specifieks, neem dan vooral contact op!  :)</p>
 		<!-- <ul>
 			<li>Dolor etiam magna etiam.</li>
 			<li>Sagittis lorem eleifend.</li>
@@ -27,6 +27,4 @@ nav-menu: true
 		</ul> -->
 	</div>
 </section>
-
-
 </div>
