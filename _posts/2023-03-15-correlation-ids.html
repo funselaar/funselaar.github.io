@@ -1,0 +1,286 @@
+---
+layout: post
+title: Correlation Ids Met ASP.NET
+full-title: "Hoe gebruik je Correlation Ids in ASP.NET microservices"
+banner: /assets/images/gallery/correlation-id.jpg
+topic: Foutopsporing
+day: 15
+month: Maart
+year: 2023
+author: Funs Janssen
+author-image: /assets/images/resource/author-1.png
+permalink: /correlation-ids
+tags: CorrelationIds ASP.NET Microservices Middleware
+---
+
+<h3 class="blog-title">Hoe gebruik je Correlation Ids in ASP NET microservices
+</h3>
+
+<p>
+    Als je een applicatie hebt gebaseerd op een microservices architectuur, heb je
+    waarschijnlijk te maken met meerdere services die met elkaar communiceren via
+    HTTP-protocollen. Een van de uitdagingen van deze architectuur is het traceren
+    en debuggen van HTTP-verzoeken die door verschillende services heen stromen. Hoe
+    kun je bijvoorbeeld achterhalen waar een verzoek is mislukt, of hoe lang een
+    verzoek heeft geduurd om te worden afgehandeld?
+</p>
+<p>
+    Een mogelijke oplossing is om gebruik te maken van correlation ids. Dit zijn
+    unieke identificatoren die je kunt
+    gebruiken om de verschillende verzoeken en antwoorden die bij een bepaalde
+    actie horen aan elkaar te koppelen. Door correlation ids toe te voegen aan je
+    HTTP-headers, kun je de levenscyclus van een verzoek volgen en analyseren, en
+    eventuele problemen sneller opsporen en oplossen.
+</p>
+<p>In deze blog ga ik je laten zien hoe je correlation ids kunt gebruiken in
+    ASP.NET microservices. We zullen een voorbeeldproject gebruiken dat bestaat uit
+    twee ASP.NET Core Web API-projecten: een OrderService en een ProductService. De
+    OrderService is verantwoordelijk voor het afhandelen van bestellingen, en de
+    ProductService is verantwoordelijk voor het leveren van productinformatie. De
+    OrderService roept de ProductService aan om de productdetails op te halen voor
+    een gegeven bestelling.
+</p>
+<h4>Wat zijn correlation ids? Waarom zijn ze nuttig?</h4>
+<p>
+    Correlation ids zijn unieke ids die je kunt gebruiken om
+    verschillende taken te correleren aan eenzelfde macro-operatie. Door ervoor
+    te zorgen dat elk antwoord een unieke id heeft, kun je het verzoek volgen,
+    monitoren en debuggen wanneer het door meerdere services heen gaat.
+</p>
+<p>
+    Omdat verschillende servicecomponenten betrokken kunnen zijn bij de uitvoering
+    van het verzoek, heb je een methode nodig om al deze servicecomponenten te
+    koppelen aan het verzoek; d.w.z., je hebt een manier nodig om al deze
+    servicecomponenten aan het verzoek te koppelen.
+</p>
+<p>
+    Het idee is dat de service die het verzoek initieert een correlation id
+    genereert en deze doorgeeft aan de volgende service. De tweede service geeft
+    deze correlation id door aan de derde service, enzovoort. Als er een fout
+    optreedt, kan de betreffende service de foutmelding loggen samen met de
+    correlation id. Op deze manier kun je gemakkelijk achterhalen welk verzoek de
+    fout heeft veroorzaakt, en welke services erbij betrokken waren.
+</p>
+<h4>Hoe gebruik je correlation ids in ASP.NET microservices?</h4>
+<p>Om correlation ids te gebruiken in ASP.NET microservices, moet je de volgende
+    stappen uitvoeren:
+</p>
+<ul class="check-list">
+    <li>Stap 1: Genereer een correlation id voor elk inkomend verzoek in de eerste
+        service.
+    </li>
+    <li>Stap 2: Voeg de correlation id toe aan de HTTP-header van het uitgaande
+        verzoek naar
+        de volgende service.</li>
+    <li>Stap 3: Lees de correlation id uit de HTTP-header van het inkomende verzoek
+        in de
+        volgende service.</li>
+    <li>Stap 4: Herhaal stap 2 en 3 voor elke volgende service die wordt
+        aangeroepen.</li>
+    <li>Stap 5: Log de correlation id samen met eventuele foutmeldingen of andere
+        relevante
+        informatie.</li>
+</ul>
+<p>
+    Om dit te laten zien, zullen we gebruik maken van het voorbeeldproject dat
+    bestaat uit twee ASP.NET Core Web API-projecten: een OrderService en een
+    ProductService. De OrderService is verantwoordelijk voor het afhandelen van
+    bestellingen, en de ProductService is verantwoordelijk voor het leveren van
+    productinformatie. De OrderService roept de ProductService aan om de
+    productdetails op te halen voor een gegeven bestelling.
+</p>
+
+<h4>Stap 1: Genereer een correlation id voor elk inkomend verzoek in de eerste
+    service</h4>
+
+<p>Om een correlation id te genereren voor elk inkomend verzoek in de eerste service
+    (in dit gevalde OrderService), kun je gebruik maken van een middleware
+    die de correlation id genereert en toevoegt aan de HTTP-context. Een middleware
+    is een stukje code dat wordt uitgevoerd tussen het ontvangen en het
+    verzenden van een HTTP-verzoek.
+</p>
+<p>
+    De CorrelationIdMiddleware-klasse die we gaan gebruiken ziet er als volgt uit:
+</p>
+<pre class="line-numbers">
+<code class="language-csharp">
+public class CorrelationIdMiddleware
+{
+    private readonly RequestDelegate _next;
+
+    public CorrelationIdMiddleware(RequestDelegate next)
+    {
+        _next = next;
+    }
+
+    public async Task Invoke(HttpContext context)
+    {
+        // Haal de scoped Context op.
+        var correlationContext = context.RequestServices.GetRequiredService<CorrelationIdContext>();
+
+        // Check of er al een correlation id meegestuurd is.
+        if (context.Request.Headers.TryGetValue(CorrelationIdContext.CorrelationIdHeaderKey, out var correlationIds) && correlationIds.Any())
+        {
+            correlationContext.CorrelationId = correlationIds.First();
+        }
+
+        // Voeg het correlation id toe aan de response headers
+        context.Response.OnStarting(state => {
+            var httpContext = (HttpContext)state;
+            httpContext.Response.Headers.Add(CorrelationIdContext.CorrelationIdHeaderKey, correlationContext.CorrelationId);
+            return Task.CompletedTask;
+        }, context);
+
+        // Voeg het correlation id toe aan de Serilog LogContext. Zo kan het id aan iedere log regel binnen de scope worden toegevoegd.
+        using (LogContext.PushProperty("CorrelationId", correlationContext.CorrelationId))
+        {
+            await _next.Invoke(context);
+        }
+    }
+}
+</code>
+</pre>
+<p>
+    In deze middleware maken we gebruik van een CorrelationIdContext. Deze
+    registreren we als scoped service, zodat er 1 context is per request. Deze
+    klasse ziet er als volgt uit:
+</p>
+<pre class="line-numbers">
+<code class="language-csharp">
+public class CorrelationIdContext
+{
+    public const string CorrelationIdHeaderKey = "X-Correlation-Id";
+
+    public string CorrelationId { get; set; } = Guid.NewGuid().ToString();
+}
+</code>
+</pre>
+<p>
+    Om deze middleware en context te registreren in de pipeline, moet je de volgende
+    regels toevoegen aan de Configure-methode en de ConfigureServices-methode in de
+    Startup-klasse van de
+    OrderService:
+</p>
+<pre class="line-numbers">
+<code class="language-csharp">
+// Configure
+app.UseMiddleware<CorrelationIdMiddleware>();
+
+// Configure Services
+services.AddScoped<CorrelationIdContext>();
+</code>
+</pre>
+
+<h4>Stap 2: Voeg de correlation id toe aan de HTTP-header van het uitgaande verzoek
+    naar de volgende service</h4>
+<p>
+    Om de correlation id toe te voegen aan de HTTP-header van het uitgaande verzoek
+    naar de volgende service (in dit geval de ProductService), kun je gebruik maken
+    van een HttpClientFactory die een HttpClient creëert met een vooraf
+    geconfigureerde header.
+</p>
+<p>
+    Om een HttpClientFactory te gebruiken om de correlation id toe te voegen aan de
+    HTTP-header van het uitgaande verzoek, kun je de volgende stappen uitvoeren:
+</p>
+<ul class="check-list">
+    <li>Registreer de HttpClientFactory-service in de ConfigureServices-methode in
+        de Startup-klasse van de OrderService. Gebruik hiervoor de
+        AddHttpClient-methode met een naam en een configuratie-delegate. In de
+        configuratie-delegate, stel de BaseAddress in op de URL van de
+        ProductService en voeg een delegating handler toe die de correlation id
+        leest uit de HTTP-context en toevoegt aan de header van het uitgaande
+        verzoek.</li>
+    <li>Injecteer de HttpClient in de controller of service die het
+        uitgaande verzoek moet maken.</li>
+</ul>
+<p>
+    De code om de HttpClient te registreren ziet er als volgt uit:
+</p>
+<pre class="line-numbers">
+<code class="language-csharp">
+services.AddHttpClient<OrderService>(client => {
+    client.BaseAddress = new Uri(“https://localhost:5001”);
+}).AddHttpMessageHandler<CorrelationIdHandler>();
+</code>
+</pre>
+<p>
+    De code om de CorrelationIdHandler te implementeren ziet er als volgt
+    uit:
+</p>
+<pre class="line-numbers">
+<code class="language-csharp">
+public class CorrelationIdHandler : DelegatingHandler
+{
+    private readonly IHttpContextAccessor _httpContextAccessor;
+
+    public CorrelationIdHandler(IHttpContextAccessor httpContextAccessor)
+    {
+        _httpContextAccessor = httpContextAccessor;
+    }
+
+    protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+    {
+        var context = _httpContextAccessor.HttpContext?.RequestServices?.GetService<CorrelationIdContext>();
+
+        if (context != null)
+        {
+            request.Headers.Add(CorrelationIdContext.CorrelationIdHeaderKey, context.CorrelationId);
+        }
+
+        return base.SendAsync(request, cancellationToken);
+    }
+}
+</code>
+</pre>
+
+<h4>Stap 3: Lees de correlation id uit de HTTP-header van het inkomende verzoek in
+    de volgende service</h4>
+
+<p>
+    Om het correlation id te lezen uit de HTTP-header van het inkomende verzoek in
+    de
+    volgende service (in dit geval de ProductService), kun je gebruik maken van een
+    middleware component die de correlation id leest uit de header en toevoegt aan
+    de HTTP-context. Dit is vergelijkbaar met de middleware die we hebben
+    gemaakt voor het genereren van correlation ids in de eerste service. We kunnen
+    dan ook exact dezelfde middleware gebruiken en toevoegen aan het project.
+</p>
+<h4>Stap 4: Herhaal stap 2 en 3 voor elke volgende service die wordt aangeroepen
+</h4>
+<p>
+    Als je meer dan twee services hebt die met elkaar communiceren via
+    HTTP-protocollen, moet je stap 2 en 3 herhalen voor elke volgende service die
+    wordt aangeroepen. Op deze manier kun je ervoor zorgen dat elke service de
+    correlation id ontvangt en doorgeeft aan de volgende service.
+</p>
+<h4>Stap 5: Log de correlation id samen met eventuele foutmeldingen of andere
+    relevante informatie</h4>
+<p>
+    Om gebruik te maken van de correlation ids voor het traceren en debuggen van je
+    HTTP-verzoeken, moet je ervoor zorgen dat je ze logt samen met eventuele
+    foutmeldingen of andere relevante informatie. Op deze manier kun je gemakkelijk
+    achterhalen welk verzoek de fout heeft veroorzaakt, en welke services erbij
+    betrokken waren.
+</p>
+<p>In dit voorbeeld maken we gebruik van Serilog. We hebben het correlation id
+    toegevoegd aan de LogContext. Maar in sommige gevallen is er configuratie nodig
+    om deze ook te loggen. Wanneer je gebruik maakt van bijvoorbeeld Splunk is dit
+    niet nodig. Wanneer je een output template gebruikt zou je [CorrelationId]
+    hieraan toe kunnen voegen.
+</p>
+<h4>Conclusie</h4>
+<p>
+    In deze blog heb ik je laten zien hoe je correlation ids kunt gebruiken in
+    ASP.NET microservices. We hebben een voorbeeldproject gebruikt dat bestaat uit
+    twee ASP.NET Core Web API-projecten: een OrderService en een ProductService. De
+    OrderService is verantwoordelijk voor het afhandelen van bestellingen, en de
+    ProductService is verantwoordelijk voor het leveren van productinformatie. De
+    OrderService roept de ProductService aan om de productdetails op te halen voor
+    een gegeven bestelling.
+</p>
+<p>Ik hoop dat deze blog je heeft geholpen om te begrijpen wat correlation ids
+    zijn, waarom ze nuttig zijn, en hoe je ze kunt gebruiken in ASP.NET
+    microservices.</p>
+
+https://www.pexels.com/photo/rock-formation-2335126/

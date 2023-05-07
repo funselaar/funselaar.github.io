@@ -1,0 +1,93 @@
+<!-- CTA One -->
+<section class="cta-one">
+    <div class="auto-container">
+        <div class="d-flex justify-content-between align-items-center flex-wrap">
+            <!-- CTA Logo -->
+            <div class="cta-logo">
+                <img src="/assets/images/logo-2.png" style="height: 63px;" alt="" />
+            </div>
+            <!-- Info Text -->
+            <div class="cta-one_text">
+                Loolaan 246, 7315 AH<br> Apeldoorn.
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End CTA One -->
+
+<!-- Main Footer -->
+<footer class="main-footer">
+    <div class="auto-container">
+        <!--Widgets Section-->
+        <div class="main-footer_widgets">
+            <div class="row clearfix">
+
+                <!--big column-->
+                <div class="big-column col-lg-7 col-md-12 col-sm-12">
+                    <div class="row clearfix">
+
+                        <!--Footer Column-->
+                        <div class="main-footer_column col-lg-5 col-md-6 col-sm-12">
+                            <div class="footer-widget links-widget">
+                                <h4 class="main-footer_title">Onze diensten</h4>
+                                <ul class="main-footer_list">
+                                    <li><a href="/contact">Web Development</a></li>
+                                    <li><a href="/contact">Mobile Development</a></li>
+                                    <li><a href="/contact">IT Consultancy</a></li>
+                                    <li><a href="/contact">Data & Analyse</a></li>
+                                    <li><a href="/contact">Security</a></li>
+                                    <li><a href="/contact">Onderhoud</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!--Footer Column-->
+                        <div class="main-footer_column col-lg-4 col-md-6 col-sm-12">
+                            <div class="footer-widget links-widget">
+                                <h4 class="main-footer_title">Paginas</h4>
+                                <ul class="main-footer_list">
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/blog">Blog</a></li>
+                                    <li><a href="/cases">Cases</a></li>
+                                    <li><a href="/cases/mybusinesscard">MyBusinesscard</a></li>
+                                    <li><a href="/contact">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--big column-->
+                <div class="big-column col-lg-5 col-md-12 col-sm-12">
+                    <!--Footer Column-->
+                    <div class="main-footer_column">
+                        <div class="footer-widget news-widget">
+                            <h4 class="main-footer_title">Laatste Nieuws & Blog</h4>
+                            {% for post in site.posts limit:3 %}
+
+                            <!--News Widget Block-->
+                            <div class="news-widget-block">
+                                <div class="news-widget_image">
+                                    <img src="{{post.banner}}" alt="" />
+                                </div>
+                                <h6 class="news-widget_title"><a href="{{post.url}}">{{post.full-title}}</a></h6>
+                                <div class="news-widget_post-date">door <a href="#">{{post.author}}</a> / {{post.day}} {{post.month}} {{post.year}}
+                                </div>
+                            </div>
+
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="auto-container">
+            <div class="copyright">&copy; 2023 <a href="/">FJAN IT</a> Alle rechten voorbehouden.</div>
+        </div>
+    </div>
+</footer>
+<!-- End Main Footer -->

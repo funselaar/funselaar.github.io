@@ -1,0 +1,148 @@
+---
+layout: default
+---
+
+<!-- Sidebar Page Container -->
+<div class="sidebar-page-container">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <!-- Content Side -->
+            <div class="content-side col-lg-8 col-md-12 col-sm-12">
+                <div class="blog-detail">
+                    <div class="inner-box">
+                        <div class="image">
+                            <div class="tag">{{page.topic}}</div>
+                            <img src="{{page.banner}}" alt="" />
+                        </div>
+                        <div class="lower-content">
+                            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="post-info">
+                                    <div class="post-info_image">
+                                        <img src="{{page.author-image}}" alt="" />
+                                    </div>
+                                    {{ page.day }} {{ page.month }} {{ page.year }}<br>
+                                    door <span>{{page.author}}</span>
+                                </div>
+                                <!-- Social Box -->
+                                <ul class="social-box">
+                                    <li><a href="https://www.facebook.com/sharer.php?u=&t=" target="_blank"
+                                            class="fb-share fa fa-facebook-f"></a></li>
+                                    <li><a href="https://twitter.com/share?url=&title=" target="_blank"
+                                            class="t-share fa fa-twitter"></a></li>
+                                    <li><a href="https://api.whatsapp.com/send?text=" target="_blank"
+                                            class="wa-share fa fa-whatsapp"></a></li>
+                                </ul>
+                            </div>
+
+                            {{ content }}
+
+                            <!-- Post Share Options-->
+                            <div class="post-share-options">
+                                <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                    <div class="tags">
+                                        <span>Tags:</span>
+                                        {% for tag in page.tags %}
+                                        <a href="#">{{tag}}</a>
+                                        {% endfor %}
+                                    </div>
+                                    <ul class="social-box">
+                                        <li><a href="https://www.facebook.com/sharer.php?u=&t=" target="_blank"
+                                                class="fb-share fa fa-facebook-f"></a></li>
+                                        <li><a href="https://twitter.com/share?url=&title=" target="_blank"
+                                                class="t-share fa fa-twitter"></a></li>
+                                        <li><a href="https://api.whatsapp.com/send?text=" target="_blank"
+                                                class="wa-share fa fa-whatsapp"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Author Box -->
+                            <div class="author-box">
+                                <div class="author-box-inner">
+                                    <div class="author-image">
+                                        <img src="/assets/images/resource/author-16.png" alt="" />
+                                    </div>
+                                    <h6>Funs Janssen</h6>
+                                    <div class="text">Mijn expertise als software engineer ligt op het gebied
+                                        van mobiele en web applicaties. Ik combineer graag mijn creativiteit met
+                                        mijn technische vaardigheden om gebruiksvriendelijke en functionele
+                                        oplossingen te ontwikkelen.</div>
+                                    <ul class="author-social-box">
+                                        <li><a href="https://www.linkedin.com/in/funs-janssen/" target="_blank"
+                                                class="fa fa-linkedin"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- More Posts -->
+                            <!-- <div class="more-posts">
+                                <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                    <a href="specflow.html" class="prev-post">
+                                        <span class="icon fa-solid fa-arrow-left fa-fw"></span>
+                                        Vorige
+                                        <strong>SpecFlow met ASP.NET</strong>
+                                    </a>
+                                    <a href="containers.html" class="next-post">
+                                        <span class="icon fa-solid fa-arrow-right fa-fw"></span>
+                                        Volgende
+                                        <strong>Containers, Go of No-Go</strong>
+                                    </a>
+                                </div>
+                            </div> -->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Sidebar Side -->
+            <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
+                <aside class="sidebar">
+
+                    <!-- Category List -->
+                    <div class="sidebar-widget category-list">
+                        <div class="widget-content">
+                            <div class="sidebar-title">
+                                <h6>Tags</h6>
+                            </div>
+                            <ul>
+                                {% for tag in page.tags %}
+                                <li><a>{{tag}}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- News Widget -->
+                    <div class="sidebar-widget post-widget">
+                        <div class="widget-content">
+                            <div class="sidebar-title">
+                                <h6>Lees verder</h6>
+                            </div>
+                            {% for post in site.posts limit:3 %}
+
+                            {% if post.url != page.url %}
+                            <div class="post">
+                                <div class="thumb"><a href="{{post.url}}"><img src="{{post.banner}}"
+                                            alt=""></a></div>
+                                <h6><a href="{{post.url}}">{{post.full-title}}</a>
+                                </h6>
+                                <div class="post-date">door <span>{{post.author}}</span> / {{post.day}} {{post.month}} {{post.year}}</div>
+                            </div>
+
+                            {% endif %}
+
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                </aside>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="/assets/js/prism.js"></script>
+<!-- End Sidebar Page Container -->

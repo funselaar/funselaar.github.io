@@ -1,0 +1,33 @@
+.fjan-logo {
+    height: 44px;
+}
+
+.cta-one_text, .copyright {
+    color: var(--white-color);
+}
+
+.cta-one {
+    background-color: var(--color-two);
+}
+
+.copyright a {
+    color: var(--main-color);
+}
+
+.blog-image {
+    padding: 30px 30px;
+    border-radius: 30px;
+    background-color: var(--white-color);
+    border: 1px solid rgba(var(--black-color-rgb), 0.10);
+}
+
+pre {
+    padding: 30px 30px;
+    border-radius: 30px;
+    background-color: var(--white-color);
+    border: 1px solid rgba(var(--black-color-rgb), 0.10);
+}
+
+.header-style-three {
+    background: linear-gradient(rgba(var(--black-color-rgb), 0.55), #00000000);
+}

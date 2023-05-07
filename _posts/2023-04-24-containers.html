@@ -1,0 +1,74 @@
+---
+layout: post
+title: Containers, Go Of No-Go
+full-title: "Wanneer wel en niet kiezen voor containers?"
+banner: /assets/images/gallery/containers.jpg
+topic: Containers
+day: 24
+month: April
+year: 2023
+author: Funs Janssen
+author-image: /assets/images/resource/author-1.png
+permalink: /containers
+tags: Containers Virtualisatie Microservices DevOps
+---
+
+<h3 class="blog-title">Wanneer wel en niet kiezen voor containers?
+</h3>
+
+<p>
+    Containers zijn een vorm van besturingssysteemvirtualisatie. Met één container
+    kun je allerlei dingen uitvoeren, van een kleine microservice of een
+    kleinschalig softwareproces tot een grotere applicatie. In de container
+    bevinden zich alle benodigde uitvoerbare bestanden, binaire code, bibliotheken
+    en configuratiebestanden. In vergelijking tot virtualisatiemethoden voor
+    servers of machines bevatten containers echter geen besturingssysteemimages.
+    Hierdoor zijn ze lichter en draagbaar, met aanzienlijk minder overhead.
+</p>
+<p>
+    Containers bieden veel voordelen voor het ontwikkelen, testen en implementeren
+    van applicaties in meerdere omgevingen, van de lokale laptop van een
+    ontwikkelaar tot een on-premises datacenter tot zelfs de cloud. Containers
+    zorgen voor minder overhead, verbeterde portabiliteit, gelijkere werking, meer
+    efficiëntie en betere applicatieontwikkeling.
+</p>
+<p>Maar containers zijn niet altijd de beste oplossing voor elke situatie. Er zijn
+    ook enkele nadelen of uitdagingen waar je rekening mee moet houden als je
+    containers wilt gebruiken. Hier zijn enkele voorbeelden van wanneer je wel en
+    niet zou moeten kiezen voor containers:
+</p>
+<h4>Wanneer wel kiezen voor containers?</h4>
+<ul class="check-list">
+    <li>Als je applicaties wilt moderniseren of herstructureren voor de cloud.
+        Containers maken het mogelijk om bestaande applicaties naar modernere
+        omgevingen te migreren of te herstructureren, waarbij je gebruik kunt maken
+        van de volledige voordelen van een containerapplicatiearchitectuur.
+    </li>
+    <li>Als je microservices wilt gebruiken. Containers bieden ondersteuning voor
+        microservicearchitecturen, waarbij gedistribueerde applicaties en services
+        gemakkelijk kunnen worden geïsoleerd, geïmplementeerd en geschaald op basis
+        van afzonderlijke containerbouwstenen.</li>
+    <li>Als je DevOps wilt toepassen. Containers bieden ondersteuning voor
+        Continuous Integration en Continuous Deployment (CI/CD), waardoor
+        ontwikkelings-, test- en productiecycli kunnen worden versneld.</li>
+</ul>
+<h4>Wanneer niet kiezen voor containers?</h4>
+<ul class="check-list">
+    <li>Als je applicaties afhankelijk zijn van het besturingssysteem. Containers
+        delen hetzelfde besturingssysteem als de hostmachine, dus als je applicaties
+        specifieke besturingssysteemfuncties of -versies nodig hebben, kunnen
+        containers problemen opleveren.
+    </li>
+    <li>Als je applicaties veel resources nodig hebben. Containers hebben minder
+        overhead dan virtuele machines, maar ze hebben nog steeds resources nodig om
+        te draaien. Als je applicaties veel CPU, geheugen of schijfruimte nodig
+        hebben, kunnen containers de prestaties beïnvloeden of conflicten
+        veroorzaken met andere containers op dezelfde hostmachine.</li>
+    <li>Als je applicaties complex of monolithisch zijn. Containers zijn geschikt
+        voor het verpakken en implementeren van kleine, onafhankelijke en modulaire
+        applicaties of services. Als je applicaties complex of monolithisch zijn,
+        kan het moeilijk zijn om ze op te splitsen in containers of om ze te beheren
+        met een orkestratieplatform zoals Kubernetes.</li>
+</ul>
+
+https://www.pexels.com/photo/cargo-container-lot-906494/

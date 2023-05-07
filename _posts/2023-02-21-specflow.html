@@ -1,0 +1,270 @@
+---
+layout: post
+title: SpecFlow Met ASP.NET
+full-title: "De voordelen van SpecFlow in combinatie met ASP.NET Api's"
+banner: /assets/images/gallery/specflow.jpg
+topic: Testing
+day: 21
+month: Februari
+year: 2023
+author: Funs Janssen
+author-image: /assets/images/resource/author-1.png
+permalink: /specflow
+tags: Specflow ASP.NET BDD API-Testing Gherkin
+---
+
+<h3 class="blog-title">De voordelen van SpecFlow in combinatie met ASP NET Api's
+</h3>
+
+<p>
+    Als je werkt met ASP.NET Apis, weet je hoe belangrijk het is om je code goed te
+    testen, te documenteren en te communiceren. Je wilt immers dat je Apis
+    betrouwbaar,
+    begrijpelijk en waardevol zijn voor je gebruikers en stakeholders. Maar hoe kun
+    je
+    dat op een effectieve en efficiënte manier doen?
+</p>
+<p>
+    Een mogelijke oplossing is om gebruik te maken van SpecFlow, een BDD-framework
+    voor
+    .NET dat je helpt om je acceptatiecriteria te formuleren in natuurlijke taal, en
+    ze
+    te automatiseren met behulp van stappen definities. Met SpecFlow kun je:
+</p>
+<ul class="check-list">
+    <li>Je ASP.NET Apis testen op een gedragsgerichte manier, door scenario's te
+        beschrijven
+        die de verwachte resultaten en acties van je Apis definiëren.</li>
+    <li>Je documentatie genereren uit je scenario's, zodat je altijd een up-to-date
+        en
+        leesbare beschrijving hebt van je Apis.</li>
+    <li>Je communicatie verbeteren met je teamleden, klanten en stakeholders, door
+        een
+        gemeenschappelijke taal te gebruiken om je Apis te specificeren en te
+        testen.</li>
+</ul>
+<p>
+    In deze blog zal ik je laten zien hoe je SpecFlow kunt gebruiken in
+    combinatie
+    met ASP.NET om deze voordelen te behalen. We zullen een voorbeeldproject
+    gebruiken
+    dat een eenvoudige webapplicatie is waar gebruikers boeken kunnen zoeken en
+    kopen.
+    We zullen ons richten op de API-laag van de applicatie, die verantwoordelijk is
+    voor
+    het leveren van data en services.
+</p>
+
+<h4>Wat is SpecFlow?</h4>
+
+<p>SpecFlow is een BDD-framework voor .NET dat gebaseerd is op Cucumber. BDD staat
+    voor Behaviour Driven Development, een softwareontwikkelingsmethode die zich
+    richt
+    op het beschrijven en testen van het gewenste gedrag van een applicatie.
+</p>
+<p>
+    Met SpecFlow kun je je acceptatiecriteria schrijven in feature files, die
+    tekstbestanden zijn met de extensie .feature. In deze bestanden beschrijf je een
+    feature (een functionaliteit of een eigenschap van je applicatie) en een of meer
+    scenario's (concrete voorbeelden van hoe de feature werkt of zou moeten werken).
+    Je
+    gebruikt hiervoor de taal Gherkin, die een eenvoudige en gestructureerde syntax
+    heeft met keywords zoals Gegeven, Als, Dan, En en Maar. Je kunt deze schrijven
+    in
+    iedere gewenste taal. (bijvoorbeeld Nederlands of Engels) Het beste is dan ook
+    om
+    de taal te kiezen die het beste past bij je team.
+</p>
+<p>
+    Een voorbeeld van een feature file voor de boekenwinkel applicatie is:
+</p>
+<pre class="line-numbers">
+<code class="language-gherkin">
+Feature: Boek Details 
+    Als een gebruiker
+    Wil ik de details van een geselecteerd boek kunnen inzien
+    Zodat ik kan besluiten of ik het wil kopen
+
+Scenario: Boek details bekijken
+    Gegeven de volgende boeken zijn beschikbaar
+    | Id | Titel                    | Auteur      | Prijs |
+    | 1  | The BDD Book             | Gojko Adzic | 25    |
+    | 2  | Specification by Example | Gojko Adzic | 30    |
+    | 3  | The Cucumber Book        | Matt Wynne  | 35    | 
+    Als ik de details pagina open voor boek met id 2
+    Dan zie ik de volgende informatie
+    | Titel                    | Auteur      | Prijs |
+    | Specification by Example | Gojko Adzic | 30    |
+</code>
+</pre>
+<p>
+    Met SpecFlow kun je deze scenario's automatiseren met behulp van step
+    definitions, die .NET code zijn die de stappen uitvoert die in de feature files
+    zijn beschreven. Je kunt dit combineren met verschillende tools en frameworks,
+    zoals Selenium, Playwright, Docker of Boa Constrictor.
+</p>
+<p>
+    Een voorbeeld van een step definition file voor de boekenwinkel applicatie is:
+</p>
+<pre class="line-numbers">
+<code class="language-csharp">
+[Binding]
+public class BookDetailsSteps
+{
+    private readonly HttpClient _httpClient;
+    private readonly TestContext _testContext;
+    private HttpResponseMessage _response;
+
+    public BookDetailsSteps(HttpClient httpClient, TestContext testContext)
+    {
+        _httpClient = httpClient;
+        _testContext = testContext;
+    }
+
+    [Given(@"de volgende boeken zijn beschikbaar")]
+    public async Task GivenTheFollowingBooks(Table table) 
+    { 
+        foreach (var row in table.Rows) 
+        { 
+            var book = new Book 
+            { 
+                Id = int.Parse(row[“Id”]),
+                Title = row[“Titel”],
+                Author = row[“Auteur”],
+                Price = decimal.Parse(row[“Prijs”]) 
+            };
+
+            await _httpClient.PostAsJsonAsync(“/api/books”, book); 
+        } 
+    }
+
+    [When(@"ik de details pagina open voor boek met id (.*)")]
+    public async Task WhenIOpenTheDetailsPageForBookWithId(int id)
+    {
+        _response = await _httpClient.GetAsync($"/api/books/{id}");
+    }
+
+    [Then(@"zie ik de volgende informatie")]
+    public async Task ThenIShouldSeeTheFollowingInformation(Table table)
+    {
+        var expectedBook = table.CreateInstance<Book>();
+        var actualBook = await _response.Content.ReadFromJsonAsync<Book>();
+        actualBook.Should().BeEquivalentTo(expectedBook);
+    }
+}
+
+</code>
+</pre>
+
+<p>
+    Met deze step definitions kun je je scenario's uitvoeren en controleren of je
+    ASP.NET Apis het verwachte gedrag vertonen. Je kunt hiervoor verschillende
+    testrunners gebruiken, zoals SpecFlow+ Runner, NUnit of xUnit.
+</p>
+<p>
+    Wanneer je een ASP.Net api wilt testen is het handig als de api ook automatisch
+    word opgestart binnen je test. Je kunt dit doen door onderstaande Binding toe te
+    voegen aan je test project:
+</p>
+<pre class="line-numbers">
+<code class="language-csharp">
+[Binding]
+public class ApiHooks
+{
+    private const string _appSettingsFile = "appsettings.json";
+
+    private readonly IObjectContainer _objectContainer;
+
+    public ApiHooks(IObjectContainer objectContainer)
+    {
+        _objectContainer = objectContainer;
+    }
+
+    [BeforeScenario]
+    public async Task RegisterServices()
+    {
+        var factory = GetWebApplicationFactory();
+
+        _objectContainer.RegisterInstanceAs(factory);
+    }
+
+    private WebApplicationFactory<Program> GetWebApplicationFactory() =>
+        new WebApplicationFactory<Program>()
+            .WithWebHostBuilder(builder =>
+            {
+                builder.ConfigureAppConfiguration((context, config) =>
+                {
+                    // Hier kun je app settings overschrijven voor je testen
+                    config.AddJsonFile(Path.Combine(Directory.GetCurrentDirectory(), _appSettingsFile));
+                });
+
+                builder.ConfigureTestServices(services =>
+                {
+                    // Hier kun je services registreren specfifiek voor je testen
+                });
+            });
+}
+</code>
+</pre>
+<p>
+    Door deze code toe te voegen kun je de WebApplicationFactory injecteren in je
+    test code. Om vervolgens aan de factory een http client op te vragen. Die is
+    automatisch gekoppeld aan je test api. Pas hiervoor de constructor in de
+    StepDefinitions aan op de
+    volgende manier:
+</p>
+<pre class="line-numbers">
+<code class="language-csharp">
+[Binding]
+public class BookDetailsSteps
+{
+    public BookDetailsSteps(WebApplicationFactory<Program> factory, TestContext testContext)
+    {
+        _httpClient = factory.CreateDefaultClient(new Uri("http://localhost"));
+        _testContext = testContext;
+    }
+}
+</code>
+</pre>
+<h4>
+    Wat zijn de voordelen van SpecFlow en ASP.NET?
+</h4>
+<p>
+    Door SpecFlow te gebruiken in combinatie met ASP.NET kun je verschillende
+    voordelen behalen, zoals:
+</p>
+<ul class="check-list">
+    <li>Je kunt je Apis testen op een gedragsgerichte manier, door scenario's te
+        beschrijven die de verwachte resultaten en acties van je Apis definiëren.
+        Dit helpt je om je te richten op de waarde die je Apis leveren voor de
+        gebruiker, in plaats van op de technische details van de implementatie.</li>
+    <li>Je kunt je documentatie genereren uit je scenario's, zodat je altijd een
+        up-to-date en leesbare beschrijving hebt van je Apis. Dit helpt je om je
+        Apis te documenteren op een manier die begrijpelijk is voor iedereen die
+        erbij betrokken is of er belang bij heeft, zoals je collega's, klanten en
+        stakeholders.</li>
+    <li>Je kunt je communicatie verbeteren met je teamleden, klanten en
+        stakeholders, door een gemeenschappelijke taal te gebruiken om je Apis te
+        specificeren en te testen. Dit helpt je om misverstanden en ambiguïteiten te
+        voorkomen, en om sneller feedback en validatie te krijgen.</li>
+</ul>
+
+<h4>Conclusie</h4>
+
+<p>
+    In deze blog heb ik je laten zien hoe je SpecFlow kunt gebruiken in
+    combinatie met ASP.NET om beter te testen, te documenteren en te communiceren
+    over je Apis. We hebben een voorbeeldproject gebruikt dat een eenvoudige
+    webapplicatie is waar gebruikers boeken kunnen zoeken en kopen. We hebben ons
+    gericht op de API-laag van de applicatie, die verantwoordelijk is voor het
+    leveren van data en services via HTTP-protocollen.
+</p>
+<p>
+    Ik hoop dat deze blog je heeft geïnspireerd om SpecFlow te proberen in je eigen
+    ASP.NET projecten. Als je meer wilt weten over SpecFlow, kun je de <a
+        href="https://specflow.org/">officiële</a>
+    documentatie raadplegen, of een van de vele tutorials en artikelen die online
+    beschikbaar zijn .
+</p>
+
+https://www.pexels.com/photo/white-and-black-mountain-wallpaper-933054/

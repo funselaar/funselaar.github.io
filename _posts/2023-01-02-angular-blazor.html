@@ -1,0 +1,228 @@
+---
+layout: post
+title: Angular Vs Blazor
+full-title: "Angular vs Blazor: Wat te kiezen voor jouw volgende Web Project"
+banner: /assets/images/gallery/angular-blazor.jpg
+topic: Web Development
+day: 2
+month: Januari
+year: 2023
+author: Funs Janssen
+author-image: /assets/images/resource/author-1.png
+permalink: /angular-blazor
+tags: Angular Blazor WebAssembly WebDevelopment
+---
+
+<h3 class="blog-title">Angular vs Blazor: Wat te kiezen voor jouw volgende Web Project
+</h3>
+<p>
+    Als je een web developer bent, heb je waarschijnlijk gehoord van Angular en
+    Blazor. Dit zijn twee populaire frameworks voor het bouwen van moderne web
+    applicaties. Maar wat zijn de verschillen tussen deze twee frameworks? En welke
+    moet je kiezen voor jouw volgende web project? In deze blog zal ik een
+    vergelijking maken tussen Angular en Blazor op basis van verschillende criteria,
+    zoals:
+</p>
+<ul class="check-list">
+    <li>De taal en het platform</li>
+    <li>De architectuur en de componenten</li>
+    <li>De ondersteuning voor SPA en PWA</li>
+    <li>De interoperabiliteit met JavaScript</li>
+    <li>De prestaties en de productiviteit</li>
+</ul>
+
+<h4>De taal en het platform</h4>
+<p>
+    Een van de belangrijkste verschillen tussen Angular en Blazor is de taal en het
+    platform waarop ze gebaseerd zijn. Angular is een JavaScript-based framework dat
+    draait op de browser. Het maakt gebruik van TypeScript, een superset van
+    JavaScript die statische typen en object-georiënteerd programmeren toevoegt.
+    Angular is een onderdeel van het Node.js ecosysteem, wat betekent dat je veel
+    tools en bibliotheken kunt gebruiken die beschikbaar zijn voor JavaScript
+    ontwikkelaars.
+</p>
+<p>
+    Blazor is een C#-based framework dat draait op .NET. Het maakt gebruik van
+    WebAssembly, een technologie die .NET code kan compileren en uitvoeren in de
+    browser. Blazor is een onderdeel van het ASP.NET Core ecosysteem, wat betekent
+    dat je veel tools en bibliotheken kunt gebruiken die beschikbaar zijn voor .NET
+    ontwikkelaars.
+</p>
+<h4>De architectuur en de componenten</h4>
+<p>
+    Een ander verschil tussen Angular en Blazor is de architectuur en de componenten
+    die ze gebruiken om web applicaties te bouwen. Beide frameworks zijn gebaseerd
+    op het concept van component-based development, wat betekent dat je je
+    applicatie kunt opdelen in herbruikbare stukjes UI logica die met elkaar
+    communiceren via inputs en outputs.
+</p>
+<p>
+    Angular maakt gebruik van een hiërarchische component tree, waarbij elke
+    component een template (HTML), een class (TypeScript) en een style (CSS) heeft.
+    Angular biedt ook directives, pipes en services om extra functionaliteit toe te
+    voegen aan je componenten. Angular volgt het model-view-viewmodel (MVVM)
+    patroon, waarbij je data kunt binden tussen je view (template) en je viewmodel
+    (class).
+</p>
+<p>
+    Blazor maakt gebruik van een vlakke component tree, waarbij elke component een
+    Razor-bestand heeft dat HTML en C# code combineert. Blazor biedt ook parameters,
+    cascading values, event handlers en dependency injection om extra
+    functionaliteit toe te voegen aan je componenten. Blazor volgt een
+    model-view-controller (MVC) patroon, waarbij je data kunt doorgeven tussen je
+    controller (C# code) en je view (Razor-bestand).
+</p>
+
+<h4>
+    De ondersteuning voor SPA en PWA
+</h4>
+<p>
+    Een ander verschil tussen Angular en Blazor is de ondersteuning voor single-page
+    applications (SPA) en progressive web applications (PWA). SPA's zijn web
+    applicaties
+    die bestaan uit één HTML-pagina die dynamisch wordt bijgewerkt zonder de pagina
+    te
+    herladen. PWA's zijn web applicaties die zich gedragen als native apps, met
+    functies
+    zoals offline werken, push notificaties en installatie op het startscherm.
+</p>
+<p>
+    Angular heeft een ingebouwde ondersteuning voor SPA's, aangezien het framework
+    is
+    ontworpen om snelle en responsieve web applicaties te bouwen. Angular heeft ook
+    een
+    eenvoudige manier om een bestaande Angular app om te zetten in een PWA, door
+    gebruik
+    te maken van het <a href="https://angular.io/guide/service-worker-getting-started">@angular/pwa
+        pakket.</a> Dit pakket voegt automatisch de benodigde
+    bestanden en configuraties toe om een service worker te registreren, een web app
+    manifest te genereren en de assets te cachen.
+</p>
+<p>
+    Blazor heeft ook een ingebouwde ondersteuning voor SPA's, aangezien het
+    framework
+    gebruik maakt van WebAssembly om .NET code uit te voeren in de browser. Blazor
+    heeft
+    echter geen ingebouwde ondersteuning voor PWA's, wat betekent dat je zelf een
+    service worker en een web app manifest moet toevoegen en configureren. Er zijn
+    wel
+    enkele hulpmiddelen beschikbaar om dit proces te vergemakkelijken, zoals het
+    Blazor.PWA.MSBuild pakket of de Blazor WebAssembly PWA template.
+</p>
+<h4>
+    De interoperabiliteit met JavaScript
+</h4>
+<p>
+    Een ander verschil tussen Angular en Blazor is de interoperabiliteit met
+    JavaScript
+    (JS). JS interop is het vermogen om JS functies aan te roepen vanuit .NET
+    methoden
+    en .NET methoden aan te roepen vanuit JS functies. Dit is nuttig om gebruik te
+    maken
+    van bestaande JS bibliotheken of om toegang te krijgen tot browser API's die
+    niet
+    beschikbaar zijn in .NET.
+</p>
+<p>
+    Angular heeft een natuurlijke interoperabiliteit met JS, aangezien het framework
+    zelf gebaseerd is op JS. Je kunt eenvoudig JS code schrijven of importeren in je
+    TypeScript bestanden en deze aanroepen vanuit je Angular componenten. Je kunt
+    ook
+    TypeScript decorators gebruiken om .NET methoden bloot te stellen aan JS code.
+</p>
+<p>
+    Blazor heeft een kunstmatige interoperabiliteit met JS, aangezien het framework
+    gebaseerd is op .NET. Je moet gebruik maken van speciale klassen en methoden om
+    JS
+    code aan te roepen of te importeren in je C# bestanden en deze aan te roepen
+    vanuit
+    je Blazor componenten. Je moet ook gebruik maken van speciale attributen om .NET
+    methoden bloot te stellen aan JS code.
+</p>
+<h4>
+    De prestaties en de productiviteit
+</h4>
+<p>
+    Een laatste verschil tussen Angular en Blazor is de prestaties en de
+    productiviteit
+    van de frameworks. Prestaties hebben betrekking op hoe snel en efficiënt de web
+    applicaties werken, zowel in de browser als op de server. Productiviteit heeft
+    betrekking op hoe snel en gemakkelijk de web applicaties ontwikkeld kunnen
+    worden,
+    zowel door individuele ontwikkelaars als door teams.
+</p>
+<p>
+    Angular heeft een goede reputatie op het gebied van prestaties, vooral dankzij
+    de
+    change detection strategie die gebruik maakt van zones om wijzigingen in de
+    component tree te detecteren en te verwerken. Angular heeft ook verschillende
+    opties
+    om de applicatie te optimaliseren, zoals lazy loading, code splitting, tree
+    shaking
+    en ahead-of-time (AOT) compilatie. Angular heeft echter ook een aantal nadelen
+    op
+    het gebied van prestaties, zoals de grootte van het framework zelf, de
+    complexiteit
+    van de build pipeline en de afhankelijkheid van JavaScript.
+</p>
+<p>
+    Blazor heeft een veelbelovende reputatie op het gebied van prestaties, vooral
+    dankzij het gebruik van WebAssembly om .NET code uit te voeren in de browser.
+    WebAssembly is sneller dan JavaScript in veel scenario's, omdat het een
+    gecompileerde binaire code is die direct door de browser kan worden
+    geïnterpreteerd.
+    Blazor heeft echter ook een aantal nadelen op het gebied van prestaties, zoals
+    de
+    opstarttijd van het framework zelf, de grootte van de .NET runtime en de DLL's
+    en de
+    interoperabiliteit met JavaScript.
+</p>
+<p>
+    Angular heeft een goede reputatie op het gebied van productiviteit, vooral
+    dankzij
+    de Angular CLI die veel taken automatiseert, zoals het genereren van
+    componenten,
+    het uitvoeren van tests en het bouwen van applicaties. Angular heeft ook een
+    rijke
+    set aan tools en bibliotheken die beschikbaar zijn voor JavaScript
+    ontwikkelaars,
+    zoals VS Code, Angular Material, RxJS en NgRx. Angular heeft echter ook een
+    aantal
+    nadelen op het gebied van productiviteit, zoals de leercurve van het framework
+    zelf,
+    de boilerplate code die nodig is voor sommige functies en de compatibiliteit met
+    verschillende versies.
+</p>
+<p>
+    Blazor heeft een veelbelovende reputatie op het gebied van productiviteit,
+    vooral
+    dankzij het gebruik van C# als programmeertaal die veel ontwikkelaars al kennen
+    en
+    waarderen. Blazor heeft ook een rijke set aan tools en bibliotheken die
+    beschikbaar
+    zijn voor .NET ontwikkelaars, zoals Visual Studio, Blazorise, Blazored en
+    FluentValidation. Blazor heeft echter ook een aantal nadelen op het gebied van
+    productiviteit, zoals de volwassenheid van het framework zelf, de beperkte
+    ondersteuning voor sommige functies en de schaarste aan bronnen en documentatie.
+</p>
+
+<h4>Conclusie</h4>
+
+<p>In deze blog heb ik een vergelijking gemaakt tussen Angular en Blazor, twee
+    populaire frameworks voor het bouwen van moderne web applicaties. We hebben
+    gekeken naar de verschillen op basis van verschillende criteria.
+</p>
+<p>
+    We hebben gezien dat er geen eenduidig antwoord is op de vraag welk framework
+    beter is. Het hangt allemaal af van je persoonlijke voorkeur, je ervaring, je
+    doelstellingen en je context. Angular en Blazor hebben elk hun eigen voor- en
+    nadelen, hun eigen sterktes en zwaktes, hun eigen fans en critici.
+</p>
+<p>
+    Het belangrijkste is om beide frameworks een kans te geven, ze uit te proberen,
+    ze te leren kennen en ze te vergelijken. Alleen zo kun je een weloverwogen
+    beslissing maken over welk framework het beste past bij jouw volgende web
+    project.
+</p>
+
+https://www.pexels.com/photo/scenic-view-of-mountains-during-dawn-1261728/
