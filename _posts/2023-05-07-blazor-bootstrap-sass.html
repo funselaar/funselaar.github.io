@@ -1,0 +1,128 @@
+---
+layout: post
+title: Blazor, Bootstrap en SASS
+full-title: "Hoe je Bootstrap en SASS toe kunt voegen aan jouw Blazor project"
+banner: /assets/images/gallery/blazor.jpg
+topic: Web Development
+day: 7
+month: Mei
+year: 2023
+author: Funs Janssen
+author-image: /assets/images/resource/author-1.webp
+tags: Blazor Bootstrap SASS
+---
+
+<h3 class="blog-title">Hoe je Bootstrap en SASS toe kunt voegen aan jouw Blazor project
+</h3>
+
+<p>
+    Bootstrap is een populair framework voor het maken van responsieve en mobielvriendelijke websites. Sass is een
+    uitbreiding van CSS die extra functies biedt, zoals variabelen, geneste regels, mixins en meer. Door Bootstrap en
+    Sass te gebruiken in je Blazor-applicatie, kun je de stijl en het uiterlijk van je componenten verbeteren en
+    aanpassen.
+</p>
+<p>
+    Om Bootstrap en Sass toe te voegen aan je Blazor-applicatie, moet je de volgende stappen volgen:
+</p>
+<ul class="check-list">
+    <li>Voeg bootstrap toe aan je project.
+    </li>
+    <li>Maak je eigen aangepaste stijl.</li>
+    <li>Configureer de Sass compiler.</li>
+</ul>
+<p>In deze blog zal ik je laten zien hoe je deze stappen kunt uitvoeren in een eenvoudige Blazor. Ik zal gebruik maken
+    van Visual Studio als editor. Ik zal ook laten zien hoe je Sass kunt gebruiken om de standaardstijlen van Bootstrap
+    aan te passen en om aangepaste stijlen toe te voegen aan je Blazor-componenten.
+</p>
+<h4>Bootstrap toevoegen</h4>
+<p>
+    Wanneer je een project hebt aangemaakt kun je een client-side library toevoegen. Rechter muisklik op je project in
+    Visual Studio. Vervolgens klik je op Add en dan Client-Side Library.
+</p>
+
+<div class="blog-image my-4">
+    <img src="/assets/images/gallery/bootstrap-install.png" />
+</div>
+
+<p>
+    Vervolgens zoek je naar bootstrap en kies je de gewenste versie. Kies vervolgens voor specifieke bestanden en vink
+    dan alleen de folders js en scss aan. Tot slot verander je de Target Location naar <i>Styles/bootstrap</i>. Klik dan op
+    install zodat de bestanden in je project worden geladen.
+</p>
+<h4>Een aangepaste stijl maken</h4>
+<p>
+    Maak een bestand genaamd <i>site.scss</i> aan in de nieuwe folder Styles. Kopieer vervolgens de inhoud van het bestand
+    <i>wwwroot/css/site.css</i> naar het nieuwe bestand in de Styles folder. Vervolgens maak je nog een bestand aan genaamd
+    <i>_variables.scss</i>. Hierin gaan we de bootstrap overrides plaatsen.
+</p>
+<p>
+    Voeg hiervoor de volgende regels toe aan dit nieuwe bestand. Zie de opmerkingen voor wat we precies veranderen aan
+    de stijl. Voor alle mogelijke opties kun je de Bootstrap documentatie raadplegen.
+</p>
+
+<pre class="line-numbers">
+<code class="language-css">
+@import 'bootstrap/scss/_functions';
+
+// We veranderen de primaire kleur naar oranje.
+$primary: #ff6a00;
+
+// We maken een nieuwe variabele aan voor onze accent kleur.
+$accent: #0066ff;
+
+// We veranderen de border radius van bootstrap knoppen.
+$btn-border-radius: 0px;
+
+@import 'bootstrap/scss/_variables';
+
+// Vervolgens voegen we de kleur toe aan de bootstrap map.
+$theme-colors: map-merge($theme-colors, ( "primary": $primary, "accent": $accent ));
+</code></pre>
+
+<p>Om deze aangepaste variabelen te gebruiken voegen we aan <i>site.scss</i> nog de volgende regels toe. We plaatsen deze
+    helemaal aan het begin van dit bestand.</p>
+
+<pre class="line-numbers">
+<code class="language-css">
+@import '_variables.scss';
+@import 'bootstrap/scss/bootstrap.scss';    
+</code></pre>
+
+<h4>Sass Compiler Configureren</h4>
+
+<p>Wat we nu gaan doen is de SASS compiler configureren in Visual Studio. Hiervoor voegen we de volgende extensie toe:
+    <i>Web Compiler 2022+</i>. Nadat je deze hebt gedownload in het extensie venster zul je Visual Studio opnieuw moeten
+    opstarten.
+</p>
+<p>Wanneer de extensie geïnstalleerd is klik je met de rechtermuisknop op het bestand <i>Styles/site.scss</i>. Vervolgens kies
+    je Web Compiler en dan Compile File. Er is nu een <i>compilerconfig.json</i> bestand aangemaakt. Open deze en verander het
+    outputFile pad naar <i>wwwroot/css/site.css</i>. Dit zorgt ervoor dat de css file in je wwwroot komt te staan.</p>
+
+<p>
+    Naast een site.css genereert de web compiler ook een minified file. Deze kun je het beste gebruiken in je
+    applicatie. Open hiervoor <i>Pages/_Host.cshtml</i>. In deze file verwijder je de regel waarin bootstrap.min.css wordt
+    toegevoegd en verander je de regel met <i>css/site.css</i> naar <i>css/site.min.css</i>.
+</p>
+
+<p>
+    Tot slot is er nu nog 1 handige optie die je aan wilt zetten. Namelijk compile on build. Dit zorgt ervoor dat de
+    compiler altijd draait tijdens een build. Hiervoor klik je met de rechtermuisknop op <i>compilerconfig.json</i> en dan Web
+    Compiler en vervolgens Enable compile on build… Dit zorgt ervoor dat er een NuGet package aan je project wordt
+    toegevoegd.
+</p>
+
+<p>
+    Wanneer je nu de Blazor site start zul je zien dat de stijl van bootstrap componenten is gewijzigd. Zie als
+    voorbeeld de counter knop. De kleur is oranje en de hoeken zijn niet meer rond.
+</p>
+
+<div class="blog-image my-4">
+    <img src="/assets/images/gallery/bootstrap-result.png" />
+</div>
+
+<p>
+    Bedankt voor het lezen! Voor meer informatie kun je kijken op <a
+        href="https://getbootstrap.com">getbootstrap.com</a>
+</p>
+
+https://www.pexels.com/photo/green-forest-near-mountain-range-under-clear-sky-361104/
