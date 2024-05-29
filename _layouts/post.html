@@ -63,10 +63,16 @@ layout: default
                                         <img src="/assets/images/resource/author-16.png" alt="" />
                                     </div>
                                     <h6>Funs Janssen</h6>
-                                    <div class="text">Mijn expertise als software engineer ligt op het gebied
-                                        van mobiele en web applicaties. Ik combineer graag mijn creativiteit met
-                                        mijn technische vaardigheden om gebruiksvriendelijke en functionele
-                                        oplossingen te ontwikkelen.</div>
+                                    <div class="text">Als softwareontwikkelaar en architect met 8 jaar ervaring in de
+                                        IT, ben ik gepassioneerd over het creëren van innovatieve oplossingen. Mijn
+                                        technische vaardigheden omvatten het ontwerpen en implementeren van robuuste
+                                        softwarearchitecturen, het optimaliseren van prestaties en het oplossen van
+                                        complexe technische uitdagingen. Ik ben niet alleen gefocust op code, maar ook
+                                        op het grotere plaatje: hoe technologie waarde kan toevoegen aan bedrijven en
+                                        gebruikers. Als creatieve denker ben ik altijd op zoek naar nieuwe manieren om
+                                        problemen aan te pakken. Mijn ondernemende geest stelt me in staat om kansen te
+                                        zien en te benutten, of het nu gaat om het ontwikkelen van nieuwe producten, het
+                                        optimaliseren van processen of het samenwerken met cross-functionele teams.</div>
                                     <ul class="author-social-box">
                                         <li><a href="https://www.linkedin.com/in/funs-janssen/" target="_blank"
                                                 class="fa fa-linkedin"></a>
@@ -125,11 +131,11 @@ layout: default
 
                             {% if post.url != page.url %}
                             <div class="post">
-                                <div class="thumb"><a href="{{post.url}}"><img src="{{post.banner}}"
-                                            alt=""></a></div>
+                                <div class="thumb"><a href="{{post.url}}"><img src="{{post.banner}}" alt=""></a></div>
                                 <h6><a href="{{post.url}}">{{post.full-title}}</a>
                                 </h6>
-                                <div class="post-date">door <span>{{post.author}}</span> / {{post.day}} {{post.month}} {{post.year}}</div>
+                                <div class="post-date">door <span>{{post.author}}</span> / {{post.day}} {{post.month}}
+                                    {{post.year}}</div>
                             </div>
 
                             {% endif %}

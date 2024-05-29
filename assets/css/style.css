@@ -398,6 +398,7 @@
 .service-block_one-upper-box{
 	position: relative;
 	padding: 40px 25px 22px;
+	height: 340px;
 }
 
 .service-block_one-title{
@@ -1548,6 +1549,7 @@
 .news-one_block-upper-box{
 	position: relative;
 	padding: 29px 30px 20px;
+	height: 200px;
 	border-bottom: 1px solid rgba(var(--color-two-rgb), 0.10);
 }
 
@@ -2634,6 +2636,7 @@
 	position: relative;
 	border-radius: 30px;
 	overflow: hidden;
+	height: 200px;
 }
 
 .gallery-two_block-image img{
@@ -4997,6 +5000,7 @@
 .contact-info-column .info-inner{
 	position: relative;
 	padding: 45px 15px;
+	height: 250px;
 	text-align: center;
 	border-radius: 25px;
 	border:1px solid rgba(var(--black-color-rgb), 0.10);

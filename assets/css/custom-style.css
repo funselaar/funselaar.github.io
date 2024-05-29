@@ -31,3 +31,7 @@ pre {
 .header-style-three {
     background: linear-gradient(rgba(var(--black-color-rgb), 0.55), #00000000);
 }
+
+.auto-container {
+    padding: 0px 42px;
+}
