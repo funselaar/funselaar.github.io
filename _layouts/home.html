@@ -3,11 +3,6 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>FJAN IT | {{ page.title }}</title>
-	
-    <meta property="og:title" content="FJAN IT | {{ page.title }}" />
-    <meta name="description" content="{{ page.description }}">
-    <meta property="og:description" content="{{ page.description }}" />
 	<!-- Stylesheets -->
 	<link href="/assets/css/bootstrap.css" rel="stylesheet">
 	<link href="/assets/css/style.css" rel="stylesheet">
@@ -22,6 +17,8 @@
 
 	<link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
 	<link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
+
+	{% seo %}
 
 	<!-- Responsive -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -80,12 +77,14 @@
 									<ul class="navigation clearfix">
 										<li><a href="/">Home</a></li>
 										<li><a href="/blog">Blog</a></li>
-										<li class="dropdown"><a href="#">Cases</a>
+										<li><a href="/cases">Cases</a></li>
+
+										<!-- <li class="dropdown"><a href="#">Cases</a>
 											<ul>
-												<li><a href="/cases">Alle Cases</a></li>
+												<li><a href="/cases">Cases</a></li>
 												<li><a href="/cases/mybusinesscard">Mybusinesscard</a></li>
 											</ul>
-										</li>
+										</li> -->
 
 										<li><a href="/contact">Contact</a></li>
 									</ul>
@@ -258,22 +257,6 @@
 					<div class="service-block_one">
 						<div class="service-block_one-inner">
 							<div class="service-block_one-upper-box">
-								<div class="service-block_one-icon flaticon-conversation"></div>
-								<h4 class="service-block_one-title"><a href="/contact">IT Consultancy</a>
-								</h4>
-								<div class="service-block_one-text">Adviseren over de beste software oplossingen en het
-									begeleiden van het software ontwikkel proces.</div>
-							</div>
-							<div class="service-block_one-lower-box">
-								<a class="service-block_one-more" href="/contact">Offerte Aanvragen</a>
-							</div>
-						</div>
-					</div>
-
-					<!-- Service Block One -->
-					<div class="service-block_one">
-						<div class="service-block_one-inner">
-							<div class="service-block_one-upper-box">
 								<div class="service-block_one-icon flaticon-data-analysis"></div>
 								<h4 class="service-block_one-title"><a href="/contact">Data & Analyse</a>
 								</h4>
@@ -294,6 +277,22 @@
 								<h4 class="service-block_one-title"><a href="/contact">Security</a></h4>
 								<div class="service-block_one-text">Beschermen van de software tegen ongeautoriseerde
 									toegang, misbruik of aanvallen.</div>
+							</div>
+							<div class="service-block_one-lower-box">
+								<a class="service-block_one-more" href="/contact">Offerte Aanvragen</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Service Block One -->
+					<div class="service-block_one">
+						<div class="service-block_one-inner">
+							<div class="service-block_one-upper-box">
+								<div class="service-block_one-icon flaticon-conversation"></div>
+								<h4 class="service-block_one-title"><a href="/contact">IT Consultancy</a>
+								</h4>
+								<div class="service-block_one-text">Adviseren over de beste software oplossingen en het
+									begeleiden van het software ontwikkel proces.</div>
 							</div>
 							<div class="service-block_one-lower-box">
 								<a class="service-block_one-more" href="/contact">Offerte Aanvragen</a>
