@@ -84,8 +84,19 @@
                             <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
                                 <ul class="navigation clearfix">
                                     <li><a href="/">Home</a></li>
-                                    <li><a href="/blog">Blog</a></li>
+
+                                    <li class="dropdown"><a href="#">Diensten</a>
+                                        <ul>
+                                            <li><a href="/diensten/software-ontwikkeling">Software ontwikkeling</a></li>
+                                            <li><a href="/diensten/digitale-transformatie">Digitale transformatie</a></li>
+                                            <li><a href="/diensten/software-consulting">Software consulting</a></li>
+                                            <li><a href="/diensten/cloud-enablement">Cloud enablement</a></li>
+                                            <li><a href="/diensten/data-en-analyse">Data & Analyse</a></li>
+                                            <li><a href="/diensten/managed-it-services">Managed IT-services</a></li>
+                                        </ul>
+                                    </li>
                                     <li><a href="/cases">Cases</a></li>
+                                    <li><a href="/blog">Blog</a></li>
 
                                     <!-- <li class="dropdown"><a href="#">Cases</a>
                                         <ul>
@@ -232,21 +243,31 @@
         <div class="auto-container">
             <div class="four-item-carousel owl-carousel owl-theme">
 
-                {% include service-item.html title="Web development" body="Websites en webapplicaties voor
-                verschillende
-                doeleinden en platforms." icon="\assets\images\undraw_Programming.png" %}
+                {% include service-item.html title="Software ontwikkeling" body="Bouwen van op maat gemaakte software
+                met begrijpelijke workflows, onderhoudbare code en gedetailleerde documentatie."
+                icon="\assets\images\undraw_Programming.png" url="/diensten/software-ontwikkeling" %}
 
-                {% include service-item.html title="Mobile development" body="Ontwikkelen van apps voor smartphones
-                en tablets die
-                uw bedrijf vooruit helpen." icon="\assets\images\undraw_Mobile_development.png" %}
+                {% include service-item.html title="Digitale transformatie" body="Advies en strategie om
+                bedrijfsprocessen te optimaliseren met behulp van technologie."
+                icon="\assets\images\undraw_Visionary_technology.png" url="/diensten/digitale-transformatie" %}
+
+                {% include service-item.html title="Software consulting" body="Hulp bij softwaregerelateerde
+                uitdagingen, zowel bij het bouwen van nieuwe software als bij het maximaliseren van bestaande systemen."
+                icon="\assets\images\undraw_Team_collaboration.png" url="/diensten/software-consulting"
+                %}
+
+                {% include service-item.html title="Cloud-enablement" body="Ondersteuning bij het benutten van
+                cloudmogelijkheden voor schaalbaarheid, beveiliging en kostenbesparing."
+                icon="\assets\images\undraw_Cloud_hosting.png" url="/diensten/cloud-enablement"
+                %}
 
                 {% include service-item.html title="Data & Analyse" body="Verzamelen, verwerken en interpreteren van
                 data voor
-                betere beslissingen." icon="\assets\images\undraw_Data.png" %}
+                betere beslissingen." icon="\assets\images\undraw_Data.png" url="/diensten/data-en-analyse" %}
 
-                {% include service-item.html title="IT Consultancy" body="Adviseren over de beste software
-                oplossingen en het
-                begeleiden van het software ontwikkel proces." icon="\assets\images\undraw_Team_collaboration.png"
+                {% include service-item.html title="Managed IT-services" body="Volledig beheer van IT-infrastructuur en
+                bedrijfssoftware, inclusief monitoring en ontwikkeling op aanvraag."
+                icon="\assets\images\undraw_Online_organizer.png" url="/diensten/managed-it-services"
                 %}
 
             </div>
