@@ -6,7 +6,7 @@ layout: default
 <section class="case-detail">
     <div class="auto-container">
         <div class="image">
-            <img src="{{page.banner}}" alt="" />
+            <img src="{{page.banner}}" alt=""/>
         </div>
         <div class="lower-content">
             <div class="row clearfix">
@@ -19,29 +19,45 @@ layout: default
                 <div class="info-column col-lg-4 col-md-12 col-sm-12">
                     <div class="info-column_inner">
                         <ul>
-                            {% if page.datum %}<li>Datum:<span>{{page.datum}}</span></li>{% endif %}
-                            {% if page.tags %}<li>Tags:<span>{{page.tags}}</span></li>{% endif %}
-                            {% if page.location %}<li>Locatie:<span>{{page.location}}</span></li>{% endif %}
-                            {% if page.website %}<li>Website:<span><a href="https://{{page.website}}"
-                                        target="_blank">{{page.website}}</a></span></li>{% endif %}
-                            
-                            {% if page.facebook or page.linkedin or page.instagram or page.whatsapp %}      
+                            {% if page.datum %}
+                            <li>Datum:<span>{{page.datum}}</span></li>
+                            {% endif %}
+                            {% if page.tags %}
+                            <li>Tags:<span>{{page.tags}}</span></li>
+                            {% endif %}
+                            {% if page.location %}
+                            <li>Locatie:<span>{{page.location}}</span></li>
+                            {% endif %}
+                            {% if page.website %}
+                            <li>Website:<span><a href="https://{{page.website}}"
+                                                 target="_blank">{{page.website}}</a></span></li>
+                            {% endif %}
+
+                            {% if page.facebook or page.linkedin or page.instagram or page.whatsapp %}
                             <li class="social-nav">
                                 Socials: <br><br>
                                 <!-- Social Box -->
                                 {% if page.facebook %}<a href="{{page.facebook}}" target="_blank"
-                                    class="fa fa-facebook-f"></a>{% endif %}
+                                                         class="fa fa-facebook-f"></a>{% endif %}
                                 {% if page.linkedin %}<a href="{{page.linkedin}}" target="_blank"
-                                    class="fa fa-linkedin"></a>{% endif %}
+                                                         class="fa fa-linkedin"></a>{% endif %}
                                 {% if page.instagram %}<a href="{{page.instagram}}" target="_blank"
-                                    class="fa fa-instagram"></a>{% endif %}
+                                                          class="fa fa-instagram"></a>{% endif %}
                                 {% if page.whatsapp %}<a href="{{page.whatsapp}}" target="_blank"
-                                    class="fa fa-whatsapp"></a>{% endif %}
+                                                         class="fa fa-whatsapp"></a>{% endif %}
                             </li>
                             {% endif %}
                         </ul>
                     </div>
                 </div>
+            </div>
+            <div class="mt-3">
+                <a class="btn-style-one theme-btn" href="/contact">
+                    <div class="btn-wrap">
+                        <span class="text-one">Contact opnemen <i class="fa-solid fa-arrow-right fa-fw"></i></span>
+                        <span class="text-two">Contact opnemen <i class="fa-solid fa-arrow-right fa-fw"></i></span>
+                    </div>
+                </a>
             </div>
         </div>
     </div>

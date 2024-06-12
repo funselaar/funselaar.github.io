@@ -767,7 +767,7 @@ img{
     letter-spacing: 1px;
 	color: var(--white-color);
 	font-size: var(--font-16);
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 	background-color: var(--main-color);
 }
 
@@ -860,7 +860,7 @@ img{
     letter-spacing: 1px;
 	color: var(--white-color);
 	font-size: var(--font-16);
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 	background-color: var(--color-two);
 }
 
@@ -1146,18 +1146,18 @@ img{
     text-transform: uppercase;
     color: var(--main-color);
     display: inline-block;
-    padding-left: var(--padding-left-40);
+    /* padding-left: var(--padding-left-40); */
 }
 
 .sec-title_title::before{
-    position: absolute;
+    /* position: absolute;
 	content: "\f1db";
 	left: 0px;
 	top: 4px;
 	color: var(--main-color);
 	font-size: var(--font-26);
 	font-family: "Flaticon";
-	transform: rotate(90deg);
+	transform: rotate(90deg); */
 }
 
 .sec-title_heading{

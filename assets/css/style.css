@@ -398,7 +398,12 @@
 .service-block_one-upper-box{
 	position: relative;
 	padding: 40px 25px 22px;
-	height: 340px;
+	height: 400px;
+}
+
+.service-block_one-upper-box > img {
+	height: 140px;
+	object-fit: contain;
 }
 
 .service-block_one-title{
@@ -2653,12 +2658,6 @@
 	right: 0px;
 	bottom: 0px;
 	z-index: 1;
-	transition:all 300ms ease;
-	-moz-transition:all 300ms ease;
-	-webkit-transition:all 300ms ease;
-	-ms-transition:all 300ms ease;
-	-o-transition:all 300ms ease;
-	background: linear-gradient(167.05deg, rgba(29, 44, 56, 0) 9.35%, rgba(29, 44, 56, 0.9) 84.84%);
 }
 
 .gallery-two_block-inner:hover .gallery-two_block-image::before{
@@ -2675,17 +2674,6 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: linear-gradient(145.07deg, rgba(29, 44, 56, 0.63) 20.56%, rgba(0, 146, 255, 0.56) 89.42%);
-
-	transition: -webkit-transform 0.4s ease;
-	transition: transform 0.4s ease;
-	transition: transform 0.4s ease,-webkit-transform 0.4s ease;
-	-webkit-transform: scale(0, 1);
-	-ms-transform: scale(0, 1);
-	transform: scale(0, 1);
-	-webkit-transform-origin: right center;
-	-ms-transform-origin: right center;
-	transform-origin: right center;
 }
 
 .gallery-two_block-inner:hover .gallery-two_block-overlay{
@@ -2771,7 +2759,7 @@
 }
 
 .gallery-two_block-more:hover{
-	color: var(--color-ten);
+	color: var(--main-color);
 }
 
 /*** 

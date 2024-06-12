@@ -17,13 +17,12 @@
 	font-weight: 500;
 	color:var(--white-color);
 	font-size: var(--font-20);
-	text-transform: capitalize;
 	margin-bottom: var(--margin-bottom-20);
 }
 
 .main-footer_widgets{
 	position:relative;
-	padding:116px 0px 110px;
+	padding: 66px 0px 60px;
 }
 
 .footer-text{
@@ -155,7 +154,6 @@
 .news-widget-block{
 	position:relative;
 	min-height:80px;
-	padding-left:var(--padding-left-85);
 	margin-bottom:var(--margin-bottom-25);
 }
 

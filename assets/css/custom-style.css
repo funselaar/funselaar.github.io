@@ -35,3 +35,15 @@ pre {
 .auto-container {
     padding: 0px 42px;
 }
+
+.tag {
+	color: var(--main-color);
+	font-weight: 500;
+    text-transform: uppercase;
+	letter-spacing: 0.4em;
+	font-size: var(--font-14);
+}
+
+p {
+    color: var(--color-three);
+}

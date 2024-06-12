@@ -41,21 +41,21 @@ permalink: /contact
 
         <div class="comment-form-outer">
             <div class="title-box text-center">
-                <h3>Contact Opnemen</h3>
+                <h3>Contact opnemen</h3>
                 <div class="text">Vul onderstaand formulier in en neem direct contact op.</div>
             </div>
             <!-- Contact Form -->
             <div class="contact-form">
-                <form method="post" action="https://formspree.io/f/mqknlyyq" id="contact-form">
+                <form method="post" action="https://formspree.io/f/mqknlyyq" id="contact-form" onClick="ga('send', 'event', { eventCategory: 'Form', eventAction: 'Submit', eventLabel: 'Contact'});">
                     <div class="row clearfix">
 
                         <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                            <label>Uw Naam</label>
+                            <label>Naam</label>
                             <input type="text" name="name" placeholder="Vul uw naam in" required="">
                         </div>
 
                         <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                            <label>Uw Bedrijfsnaam</label>
+                            <label>Bedrijfsnaam</label>
                             <input type="text" name="company-name" placeholder="Vul uw bedrijfsnaam in"
                                 required="">
                         </div>
@@ -81,9 +81,9 @@ permalink: /contact
                             <div class="button-box">
                                 <button class="btn-style-one theme-btn">
                                     <span class="btn-wrap">
-                                        <span class="text-one">Bericht Versturen <i
+                                        <span class="text-one">Bericht versturen <i
                                                 class="fa-solid fa-arrow-right fa-fw"></i></span>
-                                        <span class="text-two">Bericht Versturen <i
+                                        <span class="text-two">Bericht versturen <i
                                                 class="fa-solid fa-arrow-right fa-fw"></i></span>
                                     </span>
                                 </button>

@@ -1,0 +1,23 @@
+﻿<div class="news-one_block col-lg-4 col-md-6 col-sm-12">
+    <div class="news-one_block-inner">
+<!--        <div class="news-one_block-image">-->
+<!--            <a href="{{include.url}}"><img src="{{include.banner}}" alt="" /></a>-->
+<!--        </div>-->
+        <div class="news-one_block-content">
+            <div class="news-one_block-upper-box">
+                <div class="news-one_block-category">{{include.topic}}</div>
+                <h4 class="news-one_block-title"><a href="{{post.url}}">{{include.full-title}}</a></h4>
+            </div>
+            <div class="news-one_block-lower-box">
+                <div class="d-flex justify-content-between align-items-center flex-wrap">
+                    <div class="news-one_block-author">
+											<span class="news-one_block-author_image"><img src="{{include.author-image}}"
+                                                                                           alt="" /></span>
+                        door <i>{{include.author}}</i>
+                    </div>
+                    <div class="news-one_block-date">{{include.day}} <span>{{include.month}}</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

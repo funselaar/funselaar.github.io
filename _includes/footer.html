@@ -35,8 +35,6 @@
                                     <li><a href="/contact">Mobile Development</a></li>
                                     <li><a href="/contact">IT Consultancy</a></li>
                                     <li><a href="/contact">Data & Analyse</a></li>
-                                    <li><a href="/contact">Security</a></li>
-                                    <li><a href="/contact">Onderhoud</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -62,14 +60,14 @@
                     <!--Footer Column-->
                     <div class="main-footer_column">
                         <div class="footer-widget news-widget">
-                            <h4 class="main-footer_title">Laatste Nieuws & Blog</h4>
+                            <h4 class="main-footer_title">Laatste nieuws & blog</h4>
                             {% for post in site.posts limit:3 %}
 
                             <!--News Widget Block-->
                             <div class="news-widget-block">
-                                <div class="news-widget_image">
-                                    <img src="{{post.banner}}" alt="" />
-                                </div>
+<!--                                <div class="news-widget_image">-->
+<!--                                    <img src="{{post.banner}}" alt="" />-->
+<!--                                </div>-->
                                 <h6 class="news-widget_title"><a href="{{post.url}}">{{post.full-title}}</a></h6>
                                 <div class="news-widget_post-date">door <a href="#">{{post.author}}</a> / {{post.day}} {{post.month}} {{post.year}}
                                 </div>
@@ -85,7 +83,7 @@
     </div>
     <div class="footer-copyright">
         <div class="auto-container">
-            <div class="copyright">&copy; 2023 <a href="/">FJAN IT</a> Alle rechten voorbehouden.</div>
+            <div class="copyright">&copy; 2024 <a href="/">FJAN IT</a> Alle rechten voorbehouden.</div>
         </div>
     </div>
 </footer>

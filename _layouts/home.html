@@ -2,751 +2,411 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<!-- Stylesheets -->
-	<link href="/assets/css/bootstrap.css" rel="stylesheet">
-	<link href="/assets/css/style.css" rel="stylesheet">
-	<link href="/assets/css/responsive.css" rel="stylesheet">
-	<!-- Custom style -->
-	<link href="/assets/css/custom-style.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <!-- Stylesheets -->
+    <link href="/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/responsive.css" rel="stylesheet">
+    <!-- Custom style -->
+    <link href="/assets/css/custom-style.css" rel="stylesheet">
 
-	<link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-	<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"></noscript>
-	<!-- Color Themes -->
-	<link id="theme-color-file" href="/assets/css/color-themes/default-color.css" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+          as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap">
+    </noscript>
+    <!-- Color Themes -->
+    <link id="theme-color-file" href="/assets/css/color-themes/default-color.css" rel="stylesheet">
 
-	<link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
-	<link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
 
-	{% seo %}
+    {% seo %}
 
-	<!-- Responsive -->
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
 </head>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QNC8KRRDBS"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-QNC8KRRDBS');
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-QNC8KRRDBS');
 </script>
 
 <body>
 
-	<div class="page-wrapper">
+<div class="page-wrapper">
 
-		<!-- Preloader -->
-		<!-- <div class="preloader"></div> -->
-		<!-- End Preloader -->
+    <!-- Preloader -->
+    <!-- <div class="preloader"></div> -->
+    <!-- End Preloader -->
 
-		<!-- Main Header -->
-		<header class="main-header">
+    <!-- Main Header -->
+    <header class="main-header">
 
-			<!-- Header Lower -->
-			<div class="header-lower">
+        <!-- Header Lower -->
+        <div class="header-lower">
 
-				<div class="auto-container">
-					<div class="inner-container d-flex justify-content-between align-items-center">
+            <div class="auto-container">
+                <div class="inner-container d-flex justify-content-between align-items-center">
 
-						<!-- Logo Box -->
-						<div class="logo-box d-flex">
-							<div class="logo"><a href="/"><img class="fjan-logo" src="/assets/images/logo.webp" alt=""
-										title=""></a></div>
-						</div>
+                    <!-- Logo Box -->
+                    <div class="logo-box d-flex">
+                        <div class="logo"><a href="/"><img class="fjan-logo" src="/assets/images/logo.webp" alt=""
+                                                           title=""></a></div>
+                    </div>
 
-						<div class="nav-outer d-flex align-items-center">
+                    <div class="nav-outer d-flex align-items-center">
 
-							<!-- Main Menu -->
-							<nav class="main-menu show navbar-expand-md">
-								<div class="navbar-header">
-									<button class="navbar-toggler" type="button" data-toggle="collapse"
-										data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-										aria-expanded="false" aria-label="Toggle navigation">
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-									</button>
-								</div>
+                        <!-- Main Menu -->
+                        <nav class="main-menu show navbar-expand-md">
+                            <div class="navbar-header">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                        aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
 
-								<div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
-									<ul class="navigation clearfix">
-										<li><a href="/">Home</a></li>
-										<li><a href="/blog">Blog</a></li>
-										<li><a href="/cases">Cases</a></li>
+                            <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
+                                <ul class="navigation clearfix">
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/blog">Blog</a></li>
+                                    <li><a href="/cases">Cases</a></li>
 
-										<!-- <li class="dropdown"><a href="#">Cases</a>
-											<ul>
-												<li><a href="/cases">Cases</a></li>
-												<li><a href="/cases/mybusinesscard">Mybusinesscard</a></li>
-											</ul>
-										</li> -->
+                                    <!-- <li class="dropdown"><a href="#">Cases</a>
+                                        <ul>
+                                            <li><a href="/cases">Cases</a></li>
+                                            <li><a href="/cases/mybusinesscard">Mybusinesscard</a></li>
+                                        </ul>
+                                    </li> -->
 
-										<li><a href="/contact">Contact</a></li>
-									</ul>
-								</div>
+                                    <li><a href="/contact">Contact</a></li>
+                                </ul>
+                            </div>
 
-							</nav>
-							<!-- Main Menu End-->
+                        </nav>
+                        <!-- Main Menu End-->
 
-						</div>
+                    </div>
 
-						<!-- Outer Box -->
-						<div class="outer-box d-flex align-items-center">
+                    <!-- Outer Box -->
+                    <div class="outer-box d-flex align-items-center">
 
-							<!-- Phone Box -->
-							<div class="header-phone">
-								<div class="header-phone_inner">
-									<span class="header-phone_icon flaticon-email"></span>
-									Contact opnemen <br>
-									<a href="mailto:info@fjan.nl">info@fjan.nl</a>
-								</div>
-							</div>
+                        <!-- Phone Box -->
+                        <div class="header-phone">
+                            <div class="header-phone_inner">
+                                <span class="header-phone_icon flaticon-email"></span>
+                                Contact opnemen <br>
+                                <a href="mailto:info@fjan.nl">info@fjan.nl</a>
+                            </div>
+                        </div>
 
-							<!-- Mobile Navigation Toggler -->
-							<div class="mobile-nav-toggler"><span class="icon"><img src="/assets/images/icons/menu.png"
-										alt="" /></span></div>
+                        <!-- Mobile Navigation Toggler -->
+                        <div class="mobile-nav-toggler"><span class="icon"><img src="/assets/images/icons/menu.png"
+                                                                                alt=""/></span></div>
 
-						</div>
-						<!-- End Outer Box -->
+                    </div>
+                    <!-- End Outer Box -->
 
-					</div>
+                </div>
 
-				</div>
-			</div>
-			<!-- End Header Lower -->
+            </div>
+        </div>
+        <!-- End Header Lower -->
 
-			<!-- Sticky Header  -->
-			<div class="sticky-header">
-				<div class="auto-container">
-					<div class="d-flex justify-content-between align-items-center">
-						<!-- Logo -->
-						<div class="logo">
-							<a href="/" title=""><img class="fjan-logo" src="/assets/images/logo.webp" alt=""
-									title=""></a>
-						</div>
+        <!-- Sticky Header  -->
+        <div class="sticky-header">
+            <div class="auto-container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a href="/" title=""><img class="fjan-logo" src="/assets/images/logo.webp" alt=""
+                                                  title=""></a>
+                    </div>
 
-						<!-- Right Col -->
-						<div class="right-box">
-							<!-- Main Menu -->
-							<nav class="main-menu">
-								<!--Keep This Empty / Menu will come through Javascript-->
-							</nav>
-							<!-- Main Menu End-->
+                    <!-- Right Col -->
+                    <div class="right-box">
+                        <!-- Main Menu -->
+                        <nav class="main-menu">
+                            <!--Keep This Empty / Menu will come through Javascript-->
+                        </nav>
+                        <!-- Main Menu End-->
 
-							<!-- Mobile Navigation Toggler -->
-							<div class="mobile-nav-toggler"><span class="icon"><img src="/assets/images/icons/menu.png"
-										alt="" /></span></div>
+                        <!-- Mobile Navigation Toggler -->
+                        <div class="mobile-nav-toggler"><span class="icon"><img src="/assets/images/icons/menu.png"
+                                                                                alt=""/></span></div>
 
-						</div>
+                    </div>
 
-					</div>
-				</div>
-			</div>
-			<!-- End Sticky Menu -->
+                </div>
+            </div>
+        </div>
+        <!-- End Sticky Menu -->
 
-			<!-- Mobile Menu  -->
-			<div class="mobile-menu">
-				<div class="menu-backdrop"></div>
-				<div class="close-btn"><span class="icon flaticon-cancel-1"></span></div>
-				<nav class="menu-box">
-					<div class="nav-logo"><a href="/"><img class="fjan-logo" src="/assets/images/logo.webp" alt=""
-								title=""></a></div>
-					<div class="menu-outer">
-						<!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
-					</div>
-				</nav>
-			</div>
-			<!-- End Mobile Menu -->
+        <!-- Mobile Menu  -->
+        <div class="mobile-menu">
+            <div class="menu-backdrop"></div>
+            <div class="close-btn"><span class="icon flaticon-cancel-1"></span></div>
+            <nav class="menu-box">
+                <div class="nav-logo"><a href="/"><img class="fjan-logo" src="/assets/images/logo.webp" alt=""
+                                                       title=""></a></div>
+                <div class="menu-outer">
+                    <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                </div>
+            </nav>
+        </div>
+        <!-- End Mobile Menu -->
 
-		</header>
-		<!-- End Main Header -->
+    </header>
+    <!-- End Main Header -->
 
-		<!-- Slider One -->
-		<section class="slider-one">
-			<div class="slider-one_pattern-layer" style="background-image: url(/assets/images/background/pattern-1.webp)"></div>
-			<div class="header-carousel">
+    <!-- Slider One -->
+    <section class="slider-one">
+        <div class="slider-one_pattern-layer"
+             style="background-image: url(/assets/images/background/pattern-1.webp)"></div>
+        <div class="header-carousel">
 
-				<!-- Slide -->
-				<div class="slide">
-					<div class="auto-container">
-						<div class="row clearfix">
-							<!-- Slider One Title Column -->
-							<div class="col-lg-7 col-md-12 col-sm-12">
-								<div class="slider-one_title-inner">
-									<h1 class="slider-one_heading">Software die <br>werkt voor u.</h1>
-									<div class="slider-one_text">FJAN IT is uw software partner voor de toekomst. Wij
-										helpen u met het realiseren van uw ideeën, het optimaliseren van uw processen en
-										het verbeteren van uw resultaten.</div>
-									<!-- Button Box -->
-									<div class="slider-one_button-box">
-										<a class="btn-style-one theme-btn" href="/contact">
-											<div class="btn-wrap">
-												<span class="text-one">Gratis Offerte <i
-														class="fa-solid fa-arrow-right fa-fw"></i></span>
-												<span class="text-two">Gratis Offerte <i
-														class="fa-solid fa-arrow-right fa-fw"></i></span>
-											</div>
-										</a>
-										<a class="btn-style-two theme-btn" href="/cases">
-											<div class="btn-wrap">
+            <!-- Slide -->
+            <div class="slide">
+                <div class="auto-container">
+                    <div class="row clearfix">
+                        <!-- Slider One Title Column -->
+                        <div class="col-lg-7 col-md-12 col-sm-12">
+                            <div class="slider-one_title-inner">
+                                <h1 class="slider-one_heading">Jouw succes, <br>onze expertise</h1>
+                                <div class="slider-one_text">FJAN IT is uw technologie partner voor de toekomst. Wij
+                                    helpen u met het realiseren van uw ideeën, het optimaliseren van uw processen en
+                                    het verbeteren van uw resultaten.
+                                </div>
+                                <!-- Button Box -->
+                                <div class="slider-one_button-box">
+                                    <a class="btn-style-one theme-btn" href="/contact">
+                                        <div class="btn-wrap">
+												<span class="text-one">Gratis offerte <i
+                                                        class="fa-solid fa-arrow-right fa-fw"></i></span>
+                                            <span class="text-two">Gratis offerte <i
+                                                    class="fa-solid fa-arrow-right fa-fw"></i></span>
+                                        </div>
+                                    </a>
+                                    <a class="btn-style-two theme-btn" href="/cases">
+                                        <div class="btn-wrap">
 												<span class="text-one">Bekijk meer <i
-														class="fa-solid fa-arrow-right fa-fw"></i></span>
-												<span class="text-two">Bekijk meer <i
-														class="fa-solid fa-arrow-right fa-fw"></i></span>
-											</div>
-										</a>
-									</div>
-								</div>
-							</div>
-							<!-- Slider One Image Column -->
-							<div class="d-flex align-items-center mt-l-0 mt-5 col-lg-5 col-md-12 col-sm-12">
-								<img src="/assets/images/undraw_software_engineer_re_tnjc.svg" alt="Computer op bureau" />
-							</div>
-						</div>
-					</div>
-				</div>
+                                                        class="fa-solid fa-arrow-right fa-fw"></i></span>
+                                            <span class="text-two">Bekijk meer <i
+                                                    class="fa-solid fa-arrow-right fa-fw"></i></span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slider One Image Column -->
+                        <div class="d-flex align-items-center mt-l-0 mt-5 col-lg-5 col-md-12 col-sm-12">
+                            <img src="/assets/images/undraw_software_engineer_re_tnjc.svg" class="wow fadeInUp"
+                                 alt="Computer op bureau"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
-			</div>
-		</section>
-		<!-- End Slider One -->
+        </div>
+    </section>
+    <!-- End Slider One -->
 
-		<!-- Services One -->
-		<section class="services-one">
-			<div class="auto-container">
-				<div class="four-item-carousel owl-carousel owl-theme">
+    <!-- Services One -->
+    <section class="services-one">
+        <div class="auto-container">
+            <div class="four-item-carousel owl-carousel owl-theme">
 
-					<!-- Service Block One -->
-					<div class="service-block_one">
-						<div class="service-block_one-inner">
-							<div class="service-block_one-upper-box">
-								<div class="service-block_one-icon flaticon-cloud-service-1"></div>
-								<h4 class="service-block_one-title"><a href="/contact">Web development</a>
-								</h4>
-								<div class="service-block_one-text">Websites en webapplicaties voor verschillende
-									doeleinden en platforms.</div>
-							</div>
-							<div class="service-block_one-lower-box">
-								<a class="service-block_one-more" href="/contact">Offerte Aanvragen</a>
-							</div>
-						</div>
-					</div>
+                {% include service-item.html title="Web development" body="Websites en webapplicaties voor
+                verschillende
+                doeleinden en platforms." icon="\assets\images\undraw_Programming.png" %}
 
-					<!-- Service Block One -->
-					<div class="service-block_one">
-						<div class="service-block_one-inner">
-							<div class="service-block_one-upper-box">
-								<div class="service-block_one-icon flaticon-iphone"></div>
-								<h4 class="service-block_one-title"><a href="/contact">Mobile development</a>
-								</h4>
-								<div class="service-block_one-text">Ontwikkelen van apps voor smartphones en tablets die
-									uw bedrijf vooruit helpen.</div>
-							</div>
-							<div class="service-block_one-lower-box">
-								<a class="service-block_one-more" href="/contact">Offerte Aanvragen</a>
-							</div>
-						</div>
-					</div>
+                {% include service-item.html title="Mobile development" body="Ontwikkelen van apps voor smartphones
+                en tablets die
+                uw bedrijf vooruit helpen." icon="\assets\images\undraw_Mobile_development.png" %}
 
-					<!-- Service Block One -->
-					<div class="service-block_one">
-						<div class="service-block_one-inner">
-							<div class="service-block_one-upper-box">
-								<div class="service-block_one-icon flaticon-data-analysis"></div>
-								<h4 class="service-block_one-title"><a href="/contact">Data & Analyse</a>
-								</h4>
-								<div class="service-block_one-text">Verzamelen, verwerken en interpreteren van data voor
-									betere beslissingen.</div>
-							</div>
-							<div class="service-block_one-lower-box">
-								<a class="service-block_one-more" href="/contact">Offerte Aanvragen</a>
-							</div>
-						</div>
-					</div>
+                {% include service-item.html title="Data & Analyse" body="Verzamelen, verwerken en interpreteren van
+                data voor
+                betere beslissingen." icon="\assets\images\undraw_Data.png" %}
 
-					<!-- Service Block One -->
-					<div class="service-block_one">
-						<div class="service-block_one-inner">
-							<div class="service-block_one-upper-box">
-								<div class="service-block_one-icon flaticon-shield"></div>
-								<h4 class="service-block_one-title"><a href="/contact">Security</a></h4>
-								<div class="service-block_one-text">Beschermen van de software tegen ongeautoriseerde
-									toegang, misbruik of aanvallen.</div>
-							</div>
-							<div class="service-block_one-lower-box">
-								<a class="service-block_one-more" href="/contact">Offerte Aanvragen</a>
-							</div>
-						</div>
-					</div>
+                {% include service-item.html title="IT Consultancy" body="Adviseren over de beste software
+                oplossingen en het
+                begeleiden van het software ontwikkel proces." icon="\assets\images\undraw_Team_collaboration.png"
+                %}
 
-					<!-- Service Block One -->
-					<div class="service-block_one">
-						<div class="service-block_one-inner">
-							<div class="service-block_one-upper-box">
-								<div class="service-block_one-icon flaticon-conversation"></div>
-								<h4 class="service-block_one-title"><a href="/contact">IT Consultancy</a>
-								</h4>
-								<div class="service-block_one-text">Adviseren over de beste software oplossingen en het
-									begeleiden van het software ontwikkel proces.</div>
-							</div>
-							<div class="service-block_one-lower-box">
-								<a class="service-block_one-more" href="/contact">Offerte Aanvragen</a>
-							</div>
-						</div>
-					</div>
+            </div>
+        </div>
+    </section>
+    <!-- End Services One -->
 
-					<!-- Service Block One -->
-					<div class="service-block_one">
-						<div class="service-block_one-inner">
-							<div class="service-block_one-upper-box">
-								<div class="service-block_one-icon flaticon-customer-support-1"></div>
-								<h4 class="service-block_one-title"><a href="/contact">Onderhoud</a></h4>
-								<div class="service-block_one-text">Oplossen van bugs, het uitvoeren van updates en het
-									bieden van technische ondersteuning.</div>
-							</div>
-							<div class="service-block_one-lower-box">
-								<a class="service-block_one-more" href="/contact">Offerte Aanvragen</a>
-							</div>
-						</div>
-					</div>
+    <section class="my-5">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <div class="col-lg-7 col-md-12 col-sm-12 p-5">
+                    <img class="rounded-5 wow fadeInLeft"
+                         src="/assets/images/resource/mockup-of-a-macbook-pro-on-a-table-at-a-coffee-shop-2447-el1 (3).png"/>
+                </div>
+                <div class="col-lg-5 col-md-12 col-sm-12 p-5">
+                    <div class="rounded">
+                        <div class="tag">case</div>
+                        <h3 class="about-one_heading">Mybusinesscard</h3>
+                        <p class="mt-2 mb-5">Voor Mybusinesscard heeft FJAN IT een systeem ontwikkeld waarmee
+                            razendsnel contact gegevens gedeeld kunnen worden. Een unieke business card die is
+                            ontwikkeld om uw netwerkervaring naar een hoger niveau te tillen. Deel uw
+                            contactgegevens sneller, efficiënter en duurzamer door een simpele tap of scan. Met
+                            Mybusinesscard maken meer dan 2000 merken een
+                            onvergetelijke indruk op hun zakelijke relaties en besparen ze tijd en papier.</p>
+                    </div>
 
-				</div>
-			</div>
-		</section>
-		<!-- End Services One -->
+                    <!-- Button Box -->
+                    <a class="btn-style-one theme-btn" href="/cases/mybusinesscard">
+                        <div class="btn-wrap">
+                            <span class="text-one">Lees verder <i class="fa-solid fa-arrow-right fa-fw"></i></span>
+                            <span class="text-two">Lees verder <i class="fa-solid fa-arrow-right fa-fw"></i></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-		<!-- About One -->
-		<section class="about-one">
-			<div class="about-one_pattern" data-parallax='{"y" : 80}'
-				style="background-image:url(/assets/images/background/pattern-2.webp)"></div>
-			<div class="auto-container">
-				<div class="row clearfix">
-					<!-- Image Column -->
-					<div class="about-one_image-column col-lg-6 col-md-12 col-sm-12">
-						<div class="about-one_pattern-two" data-parallax='{"y" : 60}'
-							style="background-image:url(/assets/images/background/pattern-3.webp)"></div>
-						<div class="about-one_color-layer" data-parallax='{"x" : 60}'></div>
-						<div class="about-one_image-inner">
-							<div class="about-one_image-icon" data-depth="0.20"><img src="/assets/images/icons/service-3.png"
-									alt="" /></div>
-							<div class="parallax-scene-4">
-								<div class="about-one_image" data-depth="0.20">
-									<img src="/assets/images/resource/about.webp" alt="" />
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- Image Column -->
-					<div class="about-one_content-column col-lg-6 col-md-12 col-sm-12">
-						<div class="about-one_content-inner">
-							<div class="about-one_title">Over ons</div>
-							<h3 class="about-one_heading">Wij optimaliseren de processen van onze klanten met
-								innovatieve softwareoplossingen.</h3>
-							<div class="about-one_text">FJAN IT ontwikkelt maatwerk software die uw bedrijf efficiënter,
-								effectiever en duurzamer maakt. Wij automatiseren workflows, integreren systemen,
-								analyseren data en verbeteren de klantbeleving. Wij werken samen met u om uw uitdagingen
-								en kansen te begrijpen en uw oplossingen te implementeren.</div>
-							<div class="row clearfix">
-								<!-- About One Block -->
-								<div class="about-one_block col-lg-6 col-md-6 col-sm-12">
-									<div class="about-one_block-icon flaticon-analysis"></div>
-									<h6 class="about-one_block-heading">Probleem Analyse</h6>
-									<div class="about-one_block-text">Het begrijpen van de behoeften en doelstellingen
-										van uw bedrijf, en het identificeren van de uitdagingen en kansen die daarbij
-										horen.</div>
-								</div>
-								<!-- About One Block -->
-								<div class="about-one_block col-lg-6 col-md-6 col-sm-12">
-									<div class="about-one_block-icon flaticon-idea"></div>
-									<h6 class="about-one_block-heading">Implementeren Oplossing</h6>
-									<div class="about-one_block-text">Het ontwikkelen en implementeren van
-										softwareoplossingen die aansluiten bij de behoeften en doelstellingen uw
-										bedrijf.</div>
-								</div>
-							</div>
-							<!-- Button Box -->
-							<div class="about-one_button-box">
-								<a class="btn-style-one theme-btn" href="contact.html">
-									<div class="btn-wrap">
-										<span class="text-one">Direct Contact <i
-												class="fa-solid fa-arrow-right fa-fw"></i></span>
-										<span class="text-two">Direct Contact <i
-												class="fa-solid fa-arrow-right fa-fw"></i></span>
-									</div>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- End About One -->
+    <section class="my-5">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <div class="col-lg-5 col-md-12 col-sm-12 p-5 text-end">
+                    <div class="rounded">
+                        <div class="tag">case</div>
+                        <h3 class="about-one_heading">Trusthero</h3>
+                        <p class="mt-2 mb-5">Dankzij Trusthero’s SaaS-oplossing heeft het bedrijf een schat aan
+                            waardevolle inzichten verzameld. Ze hebben niet
+                            alleen hun product geoptimaliseerd op basis van klantfeedback, maar ook hun online
+                            aanwezigheid vergroot. Positieve
+                            mond-tot-mondreclame is nu een krachtig instrument geworden.</p>
+                    </div>
 
-		<!-- Steps One -->
-		<section class="steps-one">
-			<div class="auto-container">
-				<div class="row clearfix">
+                    <!-- Button Box -->
+                    <a class="btn-style-one theme-btn" href="/cases/trusthero">
+                        <div class="btn-wrap">
+                            <span class="text-one">Lees verder <i class="fa-solid fa-arrow-right fa-fw"></i></span>
+                            <span class="text-two">Lees verder <i class="fa-solid fa-arrow-right fa-fw"></i></span>
+                        </div>
+                    </a>
+                </div>
 
-					<!-- Content Column -->
-					<div class="steps-one_content-column col-lg-6 col-md-12 col-sm-12">
-						<div class="steps-one_content-inner">
-							<!-- Sec Title -->
-							<div class="sec-title">
-								<div class="sec-title_title">Hoe wij Werken</div>
-								<h2 class="sec-title_heading">Tevreden wanneer u dat bent</h2>
-								<div class="sec-title_text">Bent u op zoek naar een software oplossing die perfect aansluit bij uw wensen en behoeften? Dan bent u bij ons aan het juiste adres. Wij zijn een software ontwikkelbedrijf dat gespecialiseerd is in het maken van software op maat.</div>
-							</div>
-							<!-- Step Block -->
-							<div class="step-one_block">
-								<div class="step-one_block-inner">
-									<span class="step-one_block-icon flaticon-idea"></span>
-									<h4 class="step-one_block-title">Software op Maat</h4>
-									<div class="step-one_block-text">Wij luisteren naar uw ideeën en eisen, analyseren uw bedrijfsprocessen en doelstellingen, en ontwerpen en bouwen een software oplossing die precies doet wat u wilt.</div>
-								</div>
-							</div>
-							<!-- Step Block -->
-							<div class="step-one_block">
-								<div class="step-one_block-inner">
-									<span class="step-one_block-icon flaticon-conversation"></span>
-									<h4 class="step-one_block-title">Team van Experts</h4>
-									<div class="step-one_block-text">Wij werken met een team van experts die de software ontwerpen, bouwen, testen en onderhouden. Wij gebruiken de nieuwste technologieën en methoden, en zorgen voor een goede communicatie en samenwerking gedurende het hele traject.</div>
-								</div>
-							</div>
-						</div>
-					</div>
+                <div class="col-lg-7 col-md-12 col-sm-12 p-5">
+                    <img class="rounded-5 wow fadeInRight" src="/assets/images/resource/Trusthero_mobile.webp"/>
+                </div>
+            </div>
+        </div>
+    </section>
 
-					<!-- Image Column -->
-					<div class="steps-one_image-column col-lg-6 col-md-12 col-sm-12">
-						<div class="steps-one_image-inner">
-							<div class="steps-one_pattern-layer" data-parallax='{"y" : 50}'
-								style="background-image: url(/assets/images/background/pattern-4.webp)"></div>
-							<div class="steps-one_image">
-								<div class="steps-one_icon flaticon-light-bulb"></div>
-								<img src="/assets/images/resource/fingerprint.png" alt="" />
-							</div>
-						</div>
-					</div>
+    <section class="my-5">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <div class="col-lg-7 col-md-12 col-sm-12 p-5">
+                    <img class="rounded-5 wow fadeInLeft"
+                         src="/assets/images/slimmemeteruitlezen site.png"/>
+                </div>
+                <div class="col-lg-5 col-md-12 col-sm-12 p-5">
+                    <div class="rounded">
+                        <div class="tag">case</div>
+                        <h3 class="about-one_heading">Slimmemeteruitlezen.nl</h3>
+                        <p class="mt-2 mb-5">Voor slimmemetersuitlezen.nl heeft FJAN IT een Progressive Web App
+                            ontwikkeld om de gebruiksvriendelijkheid te verbeteren. Slimmemeteruitlezen.nl was
+                            oorspronkelijk een website gericht op desktopgebruikers. Het bood functionaliteit om slimme
+                            meters uit te lezen, maar klanten gaven aan dat ze ook toegang wilden via mobiele apparaten.
+                            Om aan deze vraag te voldoen, besloot Slimmemeteruitlezen.nl om een mobielvriendelijke
+                            oplossing te ontwikkelen.</p>
+                    </div>
 
-				</div>
-			</div>
-		</section>
-		<!-- End Steps One -->
+                    <!-- Button Box -->
+                    <a class="btn-style-one theme-btn" href="/cases/slimmemeteruitlezen">
+                        <div class="btn-wrap">
+                            <span class="text-one">Lees verder <i class="fa-solid fa-arrow-right fa-fw"></i></span>
+                            <span class="text-two">Lees verder <i class="fa-solid fa-arrow-right fa-fw"></i></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-		<!-- Faq One -->
-		<section class="faq-one">
-			<div class="faq-one_pattern-layer" style="background-image: url(/assets/images/background/pattern-5.webp)"></div>
-			<div class="auto-container">
-				<div class="row clearfix">
 
-					<!-- Image Column -->
-					<div class="faq-one_image-column col-lg-6 col-md-12 col-sm-12">
-						<div class="faq-one_image-inner parallax-scene-5">
-							<div class="faq-one_image" data-depth="0.20">
-								<img src="/assets/images/resource/faq.webp" alt="" />
-							</div>
-						</div>
-					</div>
+    <!-- News One -->
+    <section class="mt-5 news-one">
+        <div class="auto-container">
+            <!-- Sec Title -->
+            <div class="sec-title centered">
+                <div class="sec-title_title">Onze blog</div>
+                <h2 class="sec-title_heading">Laatste nieuws & blog</h2>
+                <div class="sec-title_separator"></div>
+            </div>
 
-					<!-- Content Column -->
-					<div class="faq-one_content-column col-lg-6 col-md-12 col-sm-12">
-						<div class="faq-one_content-inner">
-							<!-- Sec Title -->
-							<div class="sec-title">
-								<div class="sec-title_title">FAQ</div>
-								<h2 class="sec-title_heading">Vaak gestelde vragen</h2>
-							</div>
+            <div class="row clearfix">
+                {% for post in site.posts limit:3 %}
 
-							<!-- Accordion Box -->
-							<ul class="accordion-box">
+                {% include blog-item.html
+                url=post.url
+                banner=post.banner
+                topic=post.topic
+                full-title=post.full-title
+                author-image=post.author-image
+                author=post.author
+                day=post.day
+                month=post.month
+                %}
 
-								<!-- Block -->
-								<li class="accordion block">
-									<div class="acc-btn active">
-										<div class="icon-outer"><span class="icon fa-solid fa-angle-down fa-fw"></span>
-										</div>Wat voor soort softwareoplossingen bieden jullie aan?
-									</div>
-									<div class="acc-content current">
-										<div class="content">
-											<div class="text">Wij bieden softwareoplossingen aan die gericht zijn op het
-												optimaliseren van de processen van onze klanten. Dit kunnen bijvoorbeeld
-												softwareoplossingen zijn voor het automatiseren van workflows, het
-												integreren van systemen, het analyseren van data of het verbeteren van
-												de klantbeleving. Wij ontwikkelen softwareoplossingen op maat die
-												aansluiten bij de specifieke behoeften en doelstellingen van onze
-												klanten. Wij gebruiken innovatieve technologieën en methoden om
-												hoogwaardige en duurzame softwareoplossingen te leveren.</div>
-										</div>
-									</div>
-								</li>
+                {% endfor %}
 
-								<!-- Block -->
-								<li class="accordion block">
-									<div class="acc-btn">
-										<div class="icon-outer"><span class="icon fa-solid fa-angle-down fa-fw"></span>
-										</div>Hoe werkt het proces van softwareontwikkeling op maat?
-									</div>
-									<div class="acc-content">
-										<div class="content">
-											<div class="text">Het proces van softwareontwikkeling op maat bestaat uit de
-												volgende stappen:
-												<ul class="service-detail_list">
-													<li>Intake: wij maken kennis met u en uw bedrijf, en bespreken uw
-														wensen, eisen en verwachtingen voor de softwareoplossing.</li>
-													<li>Analyse: wij onderzoeken uw huidige processen, systemen en data,
-														en identificeren de uitdagingen en kansen die daarbij horen.
-													</li>
-													<li>Ontwerp: wij stellen een functioneel en technisch ontwerp op
-														voor de softwareoplossing, waarin we de specificaties,
-														functionaliteiten en architectuur beschrijven.</li>
-													<li>Ontwikkeling: wij bouwen de softwareoplossing volgens het
-														ontwerp, met behulp van agile methoden en tools. Wij testen de
-														softwareoplossing tussentijds en betrekken u bij het
-														feedbackproces.</li>
-													<li>Oplevering: wij leveren de softwareoplossing op en zorgen voor
-														de installatie, configuratie en integratie met uw bestaande
-														systemen. Wij verzorgen ook de documentatie en training voor de
-														gebruikers.</li>
-													<li>Onderhoud: wij bieden u ondersteuning en service na de
-														oplevering van de softwareoplossing. Wij zorgen voor updates,
-														bugfixes en eventuele aanpassingen of uitbreidingen.</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</li>
+            </div>
+        </div>
+    </section>
+    <!-- End News One -->
 
-								<!-- Block -->
-								<li class="accordion block">
-									<div class="acc-btn">
-										<div class="icon-outer"><span class="icon fa-solid fa-angle-down fa-fw"></span>
-										</div>Wat zijn de voordelen van softwareoplossingen op maat?
-									</div>
-									<div class="acc-content">
-										<div class="content">
-											<div class="text">
-												De voordelen van softwareoplossingen op maat zijn:
+    {% include footer.html %}
 
-												<ul class="service-detail_list">
-													<li>U krijgt een softwareoplossing die precies past bij uw behoeften
-														en doelstellingen, en die uw processen optimaliseert.</li>
-													<li>U kunt uw concurrentievoordeel vergroten door gebruik te maken
-														van innovatieve technologieën en functionaliteiten die uw
-														bedrijf onderscheiden.</li>
-													<li>U kunt kosten besparen door efficiënter te werken, fouten te
-														verminderen en resources te optimaliseren.</li>
-													<li>U kunt flexibeler inspelen op veranderingen in de markt, de
-														wetgeving of de klantvraag door uw softwareoplossing aan te
-														passen of uit te breiden.</li>
-													<li>U kunt uw klanttevredenheid verhogen door een betere service,
-														communicatie en beleving te bieden.</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</li>
+</div>
+<!-- End PageWrapper -->
 
-								<!-- Block -->
-								<li class="accordion block">
-									<div class="acc-btn">
-										<div class="icon-outer"><span class="icon fa-solid fa-angle-down fa-fw"></span>
-										</div>Hoe zorgen jullie voor de kwaliteit en veiligheid van de
-										softwareoplossingen?
-									</div>
-									<div class="acc-content">
-										<div class="content">
-											<div class="text">
-												Wij zorgen voor de kwaliteit en veiligheid van de softwareoplossingen
-												door:
-												<ul class="service-detail_list">
-													<li>Het volgen van de best practices en standaarden voor
-														softwareontwikkeling, zoals ISO 9001 en ISO 27001.</li>
-													<li>Het toepassen van code reviews, unit tests, integratie tests en
-														acceptatie tests om fouten te voorkomen en op te lossen.</li>
-													<li>Het gebruiken van beveiligde protocollen, encryptie, firewalls
-														en antivirussoftware om de data en systemen te beschermen tegen
-														ongeautoriseerde toegang of aanvallen.</li>
-													<li>Het maken van regelmatige back-ups en herstelpunten om
-														dataverlies of downtime te voorkomen of te minimaliseren.</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</li>
+<!-- Scroll To Top -->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fas fa-arrow-up fa-fw"></span></div>
 
-								<!-- Block -->
-								<li class="accordion block">
-									<div class="acc-btn">
-										<div class="icon-outer"><span class="icon fa-solid fa-angle-down fa-fw"></span>
-										</div>Hoeveel kost het om een softwareoplossing op maat te laten ontwikkelen?
-									</div>
-									<div class="acc-content">
-										<div class="content">
-											<div class="text">
-												De kosten om een softwareoplossing op maat te laten ontwikkelen hangen
-												af van verschillende factoren, zoals:
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/magnific-popup.min.js"></script>
+<script src="/assets/js/appear.js"></script>
+<script src="/assets/js/parallax.min.js"></script>
+<script src="/assets/js/tilt.jquery.min.js"></script>
+<script src="/assets/js/owl.js"></script>
+<script src="/assets/js/wow.js"></script>
+<script src="/assets/js/parallax-scroll.js"></script>
 
-												<ul class="service-detail_list">
-													<li>De complexiteit, omvang en duur van het project.</li>
-													<li>De functionaliteiten, technologieën en integraties die nodig
-														zijn voor de softwareoplossing.</li>
-													<li>De mate van betrokkenheid, feedback en wijzigingen die u wenst
-														tijdens het ontwikkelproces.</li>
-													<li>De ondersteuning, service en garantie die u verwacht na de
-														oplevering van de softwareoplossing.</li>
-													<li>Om een nauwkeurige offerte te kunnen maken, hebben wij meer
-														informatie nodig over uw wensen, eisen en verwachtingen voor de
-														softwareoplossing. Neem contact met ons op voor een vrijblijvend
-														gesprek.</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</li>
+<script src="/assets/js/odometer.js"></script>
+<script src="/assets/js/nav-tool.js"></script>
+<script src="/assets/js/jquery-ui.js"></script>
+<script src="/assets/js/color-settings.js"></script>
+<script src="/assets/js/script.js"></script>
 
-								<!-- Block -->
-								<li class="accordion block">
-									<div class="acc-btn">
-										<div class="icon-outer"><span class="icon fa-solid fa-angle-down fa-fw"></span>
-										</div>Hoe lang duurt het om een softwareoplossing op maat te laten ontwikkelen?
-									</div>
-									<div class="acc-content">
-										<div class="content">
-											<div class="text">
-												De duur om een softwareoplossing op maat te laten ontwikkelen hangt ook
-												af van verschillende factoren, zoals:
-
-												<ul class="service-detail_list">
-													<li>De complexiteit, omvang en duur van het project.</li>
-													<li>De beschikbaarheid van resources, zoals ontwikkelaars, testers
-														en projectmanagers.</li>
-													<li>De afstemming, communicatie en samenwerking tussen u en ons
-														tijdens het ontwikkelproces.</li>
-													<li>De feedback, wijzigingen en goedkeuringen die u geeft tijdens
-														het ontwikkelproces.</li>
-													<li>Om een realistische planning te kunnen maken, hebben wij meer
-														informatie nodig over uw wensen, eisen en verwachtingen voor de
-														softwareoplossing. Neem contact met ons op voor een vrijblijvend
-														gesprek.</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</li>
-
-								<!-- Block -->
-								<li class="accordion block">
-									<div class="acc-btn">
-										<div class="icon-outer"><span class="icon fa-solid fa-angle-down fa-fw"></span>
-										</div>Hoe ondersteunen jullie de klanten na de oplevering van de
-										softwareoplossing?
-									</div>
-									<div class="acc-content">
-										<div class="content">
-											<div class="text">Wij ondersteunen onze klanten na de oplevering van de
-												softwareoplossing door:
-
-												<ul class="service-detail_list">
-													<li>Het bieden van een garantieperiode waarin wij eventuele fouten
-														of problemen kosteloos oplossen.</li>
-													<li>Het leveren van onderhouds- en updateservice om de
-														softwareoplossing up-to-date en veilig te houden.</li>
-													<li>Het verzorgen van aanpassingen of uitbreidingen van de
-														softwareoplossing als u nieuwe wensen of eisen heeft.</li>
-													<li>Het bieden van een helpdesk waar u terecht kunt voor vragen,
-														advies of ondersteuning.</li>
-													<li>Wij streven naar een langdurige relatie met onze klanten en
-														staan altijd klaar om u te helpen.</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</li>
-
-							</ul>
-
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</section>
-		<!-- End Faq One -->
-
-		<!-- News One -->
-		<section class="news-one">
-			<div class="auto-container">
-				<!-- Sec Title -->
-				<div class="sec-title centered">
-					<div class="sec-title_title">Onze blog</div>
-					<h2 class="sec-title_heading">Laatste Nieuws & Blog</h2>
-					<div class="sec-title_separator"></div>
-				</div>
-
-				<div class="row clearfix">
-                    {% for post in site.posts limit:3 %}
-					<!-- News One Block -->
-					<div class="news-one_block col-lg-4 col-md-6 col-sm-12">
-						<div class="news-one_block-inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-							<div class="news-one_block-image">
-								<a href="{{post.url}}"><img src="{{post.banner}}" alt="" /></a>
-							</div>
-							<div class="news-one_block-content">
-								<div class="news-one_block-upper-box">
-									<div class="news-one_block-category">{{post.topic}}</div>
-									<h4 class="news-one_block-title"><a href="{{post.url}}">{{post.full-title}}</a></h4>
-								</div>
-								<div class="news-one_block-lower-box">
-									<div class="d-flex justify-content-between align-items-center flex-wrap">
-										<div class="news-one_block-author">
-											<span class="news-one_block-author_image"><img
-													src="{{post.author-image}}" alt="" /></span>
-											door <i>{{post.author}}</i>
-										</div>
-										<div class="news-one_block-date">{{post.day}} <span>{{post.month}}</span></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-                    {% endfor %}
-
-				</div>
-			</div>
-		</section>
-		<!-- End News One -->
-
-		{% include footer.html %}
-
-	</div>
-	<!-- End PageWrapper -->
-
-	<!-- Scroll To Top -->
-	<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fas fa-arrow-up fa-fw"></span></div>
-
-	<script src="/assets/js/jquery.js"></script>
-	<script src="/assets/js/popper.min.js"></script>
-	<script src="/assets/js/bootstrap.min.js"></script>
-	<script src="/assets/js/magnific-popup.min.js"></script>
-	<script src="/assets/js/appear.js"></script>
-	<script src="/assets/js/parallax.min.js"></script>
-	<script src="/assets/js/tilt.jquery.min.js"></script>
-	<script src="/assets/js/owl.js"></script>
-	<script src="/assets/js/wow.js"></script>
-	<script src="/assets/js/parallax-scroll.js"></script>
-
-	<script src="/assets/js/odometer.js"></script>
-	<script src="/assets/js/nav-tool.js"></script>
-	<script src="/assets/js/jquery-ui.js"></script>
-	<script src="/assets/js/color-settings.js"></script>
-	<script src="/assets/js/script.js"></script>
-
-	<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
-	<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+<!--[if lt IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]>
+<script src="js/respond.js"></script><![endif]-->
 
 </body>
 
